@@ -1,6 +1,11 @@
 import React from 'react'
 
-export const App = () => (
+import { Jumbotron, Grid, Row, Col, Thumbnail } from 'react-bootstrap'
+import { ListOfClothes } from './ListOfClothes'
 
-    <h1>Outfits by weather</h1>
-)
+export const App = () => [
+    <Jumbotron>
+        <h1>Outfits by weather</h1>
+    </Jumbotron>,
+    <ListOfClothes/>
+    ]
