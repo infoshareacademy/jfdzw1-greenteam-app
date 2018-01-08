@@ -1,11 +1,10 @@
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap-theme.css'
+
 import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { App } from './App'
 
-const App = () => {
-    return <h1>Outfits by weather</h1>
-}
-ReactDOM.render(
-<App/>,
-    document.getElementById('root')
-)
+
+ReactDOM.render(<App/>, document.getElementById('root'))
