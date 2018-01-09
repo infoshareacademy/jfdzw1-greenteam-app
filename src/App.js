@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Jumbotron, Grid, Row, Col, Thumbnail } from 'react-bootstrap'
+import { Jumbotron} from 'react-bootstrap'
 import { ListOfClothes } from './ListOfClothes'
 
 export const App = () => [

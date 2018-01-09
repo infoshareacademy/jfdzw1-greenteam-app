@@ -18,60 +18,65 @@ import woman5 from './img/woman/pete-bellis-229665.jpg';
 import woman6 from './img/woman/pete-bellis-310093.jpg';
 import woman7 from './img/woman/pete-bellis-448200.jpg';
 
-export const ListOfClothes = () => (
-    <Grid>
-        <Row>
-            <Col xs={6} md={3}>
-                <Thumbnail href="#" alt="171x180" src={man1} />
-            </Col>
-            <Col xs={6} md={3}>
-                <Thumbnail href="#" alt="171x180" src={man2} />
-            </Col>
-            <Col xs={6} md={3}>
-                <Thumbnail href="#" alt="171x180" src={man3} />
-            </Col>
-            <Col xs={6} md={3}>
-                <Thumbnail href="#" alt="171x180" src={man4} />
-            </Col>
-        </Row>
-        <Row>
-            <Col xs={6} md={3}>
-                <Thumbnail href="#" alt="171x180" src={man5} />
-            </Col>
-            <Col xs={6} md={3}>
-                <Thumbnail href="#" alt="171x180" src={man6} />
-            </Col>
-            <Col xs={6} md={3}>
-                <Thumbnail href="#" alt="171x180" src={man7} />
-            </Col>
-            <Col xs={6} md={3}>
-                <Thumbnail href="#" alt="171x180" src={man8} />
-            </Col>
-        </Row>
-        <Row>
-            <Col xs={6} md={3}>
-                <Thumbnail href="#" alt="171x180" src={woman1} />
-            </Col>
-            <Col xs={6} md={3}>
-                <Thumbnail href="#" alt="171x180" src={woman2} />
-            </Col>
-            <Col xs={6} md={3}>
-                <Thumbnail href="#" alt="171x180" src={woman3} />
-            </Col>
-            <Col xs={6} md={3}>
-                <Thumbnail href="#" alt="171x180" src={woman4} />
-            </Col>
-        </Row>
-        <Row>
-            <Col xs={6} md={3}>
-                <Thumbnail href="#" alt="171x180" src={woman5} />
-            </Col>
-            <Col xs={6} md={3}>
-                <Thumbnail href="#" alt="171x180" src={woman6} />
-            </Col>
-            <Col xs={6} md={3}>
-                <Thumbnail href="#" alt="171x180" src={woman7} />
-            </Col>
-        </Row>
-    </Grid>
-);
+
+export class ListOfClothes extends React.Component {
+    render() {
+        return (
+            <Grid>
+                <Row>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="#" alt="171x180" src={man1} />
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="#" alt="171x180" src={man2} />
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="#" alt="171x180" src={man3} />
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="#" alt="171x180" src={man4} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="#" alt="171x180" src={man5} />
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="#" alt="171x180" src={man6} />
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="#" alt="171x180" src={man7} />
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="#" alt="171x180" src={man8} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="#" alt="171x180" src={woman1} />
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="#" alt="171x180" src={woman2} />
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="#" alt="171x180" src={woman3} />
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="#" alt="171x180" src={woman4} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="#" alt="171x180" src={woman5} />
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="#" alt="171x180" src={woman6} />
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="#" alt="171x180" src={woman7} />
+                    </Col>
+                </Row>
+            </Grid>
+        );
+    }
+}
