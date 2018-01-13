@@ -1,11 +1,13 @@
 import React from 'react'
 
 import { Jumbotron} from 'react-bootstrap'
-import { ListOfClothes } from './ListOfClothes'
+import ListOfClothesItems from './components/ListOfClothesItems'
 
-export const App = () => [
+const App = () => [
     <Jumbotron>
         <h1>Outfits by weather</h1>
     </Jumbotron>,
-    <ListOfClothes/>
+    <ListOfClothesItems/>
     ]
+
+export default App;
