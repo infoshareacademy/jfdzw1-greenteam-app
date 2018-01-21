@@ -12,6 +12,7 @@ const App = () => [
     </Jumbotron>,
 
     <ListOfClothesItems/>,
+  <CurrentWeather/>
 
     ]
 
