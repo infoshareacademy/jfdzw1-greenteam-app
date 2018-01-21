@@ -14,6 +14,8 @@ class SignUp extends Component {
         }
     }
 
+
+
 render()
 {
     return (
@@ -27,7 +29,7 @@ render()
                     </Col>
                     <Col sm={4}>
                         <FormControl type="email" placeholder="Email"
-                                     onChange = {event => this.setState({email: event.target.value})}/>
+                                     inputRef={ref => { this.email= ref; }}/>
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="formBasicText">
@@ -36,7 +38,7 @@ render()
                     </Col>
                     <Col sm={4}>
                         <FormControl type="text" placeholder="Name"
-                                     onChange = {event => this.setState({login: event.target.value})}/>
+                                     inputRef={ref => { this.login= ref; }}/>
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="formHorizontalPassword">
@@ -45,13 +47,13 @@ render()
                     </Col>
                     <Col sm={4}>
                         <FormControl type="password" placeholder="Password"
-                                     onChange = {event => this.setState({password: event.target.value})}/>
+                                     inputRef={ref => { this.password = ref; }}/>
                     </Col>
                 </FormGroup>
 
                 <FormGroup>
-                    <Col smOffset={2} sm={10}>
-                        <Checkbox>Female</Checkbox>
+                    <Col smOffset={2} sm={10} inputRef={ref => { this.gender = ref; }}>
+                        <Checkbox>Female </Checkbox>
                         <Checkbox>Male</Checkbox>
                     </Col>
                 </FormGroup>
