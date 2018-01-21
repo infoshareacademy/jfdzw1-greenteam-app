@@ -14,6 +14,10 @@ class SignUp extends Component {
         }
     }
 
+   handleSubmit = (event) => {
+       event.preventDefault();
+       alert('Submitted!');
+   }
 
 
 render()
@@ -21,14 +25,14 @@ render()
     return (
         <div>
             <h2>Sign Up</h2>
-            <Form horizontal>
+            <Form horizontal onSubmit={this.handleSubmit}>
 
                 <FormGroup controlId="formHorizontalEmail">
                     <Col componentClass={ControlLabel} sm={2}>
                         Email
                     </Col>
                     <Col sm={4}>
-                        <FormControl type="email" placeholder="Email"
+                        <FormControl type="email" placeholder="Email" required="true"
                                      inputRef={ref => { this.email= ref; }}/>
                     </Col>
                 </FormGroup>
@@ -37,7 +41,7 @@ render()
                         Login
                     </Col>
                     <Col sm={4}>
-                        <FormControl type="text" placeholder="Name"
+                        <FormControl type="text" placeholder="Name" required="true"
                                      inputRef={ref => { this.login= ref; }}/>
                     </Col>
                 </FormGroup>
@@ -46,20 +50,20 @@ render()
                         Password
                     </Col>
                     <Col sm={4}>
-                        <FormControl type="password" placeholder="Password"
+                        <FormControl type="password" placeholder="Password" required="true"
                                      inputRef={ref => { this.password = ref; }}/>
                     </Col>
                 </FormGroup>
 
                 <FormGroup>
-                    <Col smOffset={2} sm={10} inputRef={ref => { this.gender = ref; }}>
+                    <Col smOffset={2} sm={10} inputRef={ref => { this.gender = ref; }} >
                         <Checkbox>Female </Checkbox>
                         <Checkbox>Male</Checkbox>
                     </Col>
                 </FormGroup>
                 <FormGroup>
                     <Col smOffset={2} sm={10}>
-                        <Button type="submit">Sign in</Button>
+                        <Button type="submit" value="send" >Sign in</Button>
                     </Col>
                 </FormGroup>
             </Form>

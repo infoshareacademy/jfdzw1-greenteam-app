@@ -1,16 +1,34 @@
 import React from 'react'
-
-import { Jumbotron} from 'react-bootstrap'
 import ListOfClothesItems from './components/ListOfClothesItems'
 import SignUp from './components/SignUp'
-const App = () => [
-    <Jumbotron>
-        <h1>Outfits by weather</h1>
-        <SignUp/>
-    </Jumbotron>,
+import { Grid } from "react-bootstrap";
+import {BrowserRouter, Route, Switch} from "react-router-dom"
+import Header from "./components/Header";
+import Footer from './components/Footer';
 
-    <ListOfClothesItems/>
 
-    ]
+class App extends React.Component {
+
+    render() {
+
+        return (
+            <BrowserRouter>
+                <Grid>
+                    <h1>Hello world</h1>
+                    <Header/>
+
+                    <Switch>
+                        <Route exact path="/" component={SignUp}/>
+
+                        <Route path="/shop/:name" component={ListOfClothesItems}/>
+
+                    </Switch>
+
+                    <Footer/>
+                </Grid>
+            </BrowserRouter>
+        )
+    }
+}
 
 export default App;
