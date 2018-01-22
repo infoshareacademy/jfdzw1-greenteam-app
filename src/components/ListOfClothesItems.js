@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
-import {Form, FormControl, Col} from 'react-bootstrap'
+import React, {Component} from 'react';
+import {Form, FormControl, Col} from 'react-bootstrap';
 
 import dataset from '../dataset/dataset.json';
 
-import ClothItem from '../components/ClothItem'
+import ClothItem from '../components/ClothItem';
 
 class ListOfClothesItems extends Component {
 
