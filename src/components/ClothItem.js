@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React from 'react';
 
-import { Col, Thumbnail} from 'react-bootstrap'
+import { Col, Thumbnail} from 'react-bootstrap';
 
 const ClothItem = (props) => {
     const item = {

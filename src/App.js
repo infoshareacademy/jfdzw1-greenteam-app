@@ -1,10 +1,11 @@
-import React from 'react'
-import ListOfClothesItems from './components/ListOfClothesItems'
-import SignUp from './components/SignUp'
-import { Grid } from "react-bootstrap";
-import {BrowserRouter, Route, Switch} from "react-router-dom"
-import Header from "./components/Header";
+import React from 'react';
+import { Grid } from 'react-bootstrap';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
+import Header from './components/Header';
 import Footer from './components/Footer';
+import SignUp from './components/SignUp';
+import Inspirations from './scenes/Inspirations';
 
 
 class App extends React.Component {
@@ -19,7 +20,7 @@ class App extends React.Component {
 
                     <Switch>
                         <Route exact path="/" component={SignUp}/>
-                        <Route path={"/inspiration"} component={ListOfClothesItems}/>
+                        <Route path={"/inspiration"} component={Inspirations}/>
 
                     </Switch>
 
