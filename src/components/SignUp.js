@@ -14,20 +14,26 @@ class SignUp extends Component {
         }
     }
 
+   handleSubmit = (event) => {
+       event.preventDefault();
+       alert('Submitted!');
+   }
+
+
 render()
 {
     return (
         <div>
             <h2>Sign Up</h2>
-            <Form horizontal>
+            <Form horizontal onSubmit={this.handleSubmit}>
 
                 <FormGroup controlId="formHorizontalEmail">
                     <Col componentClass={ControlLabel} sm={2}>
                         Email
                     </Col>
                     <Col sm={4}>
-                        <FormControl type="email" placeholder="Email"
-                                     onChange = {event => this.setState({email: event.target.value})}/>
+                        <FormControl type="email" placeholder="Email" required="true"
+                                     inputRef={ref => { this.email= ref; }}/>
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="formBasicText">
@@ -35,8 +41,8 @@ render()
                         Login
                     </Col>
                     <Col sm={4}>
-                        <FormControl type="text" placeholder="Name"
-                                     onChange = {event => this.setState({login: event.target.value})}/>
+                        <FormControl type="text" placeholder="Name" required="true"
+                                     inputRef={ref => { this.login= ref; }}/>
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="formHorizontalPassword">
@@ -44,20 +50,20 @@ render()
                         Password
                     </Col>
                     <Col sm={4}>
-                        <FormControl type="password" placeholder="Password"
-                                     onChange = {event => this.setState({password: event.target.value})}/>
+                        <FormControl type="password" placeholder="Password" required="true"
+                                     inputRef={ref => { this.password = ref; }}/>
                     </Col>
                 </FormGroup>
 
                 <FormGroup>
-                    <Col smOffset={2} sm={10}>
-                        <Checkbox>Female</Checkbox>
+                    <Col smOffset={2} sm={10} inputRef={ref => { this.gender = ref; }} >
+                        <Checkbox>Female </Checkbox>
                         <Checkbox>Male</Checkbox>
                     </Col>
                 </FormGroup>
                 <FormGroup>
                     <Col smOffset={2} sm={10}>
-                        <Button type="submit">Sign in</Button>
+                        <Button type="submit" value="send" >Sign in</Button>
                     </Col>
                 </FormGroup>
             </Form>
