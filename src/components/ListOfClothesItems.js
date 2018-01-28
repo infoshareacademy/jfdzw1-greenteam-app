@@ -7,18 +7,31 @@ import ClothItem from '../components/ClothItem';
 
 class ListOfClothesItems extends Component {
 
+    state = {
+        itemsList: []
+    };
+
+    componentDidMount() {
+        fetch("https://api.tumblr.com/v2/tagged?tag=winter+cloth&api_key=W03IyldDeAXIxO8CfqeQ7wFvuOAdSNNjz67l7jGNJdcg7ku7ub")
+            .then(rsp => rsp.json())
+            .then(data => {
+                const result = data.response
+                    .filter(item=> item.photos && item.photos.length)
+                    .map(item=> item.photos[0].original_size.url)
+                this.setState({itemsList: result});
+                console.log(this.state.itemsList)
+            });
+    }
+
+
     render() {
         return (
             <Row>
-                {dataset
-                    .filter(item =>item.gender === this.props.filterCarts)
-                    .map((item,i) =>
+                {this.state.itemsList.map(item =>
                         <ClothItem
-                            key={item.id}
-                            id={item.id}
-                            title={item.title}
-                            img={item.img}
-                            gender={item.gender}
+
+                            img={item}
+
                         />
                 )}
 
