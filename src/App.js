@@ -4,9 +4,13 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import SignUp from './components/SignUp';
+import {Form} from './components/SignUp';
 import Inspirations from './scenes/Inspirations';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import reducer from './reducers'
 
+const store = createStore (reducer);
 
 class App extends React.Component {
 
@@ -14,18 +18,18 @@ class App extends React.Component {
 
         return (
             <BrowserRouter>
-                <Grid>
-                    <h1>Hello world</h1>
-                    <Header/>
+                <Provider store={store}>
+                    <Grid>
+                        <h1>Hello</h1>
+                        <Header/>
+                        <Switch>
+                            <Route exact path="/" component={Form}/>
+                            <Route path={"/inspiration"} component={Inspirations}/>
+                        </Switch>
+                        <Footer/>
+                    </Grid>
 
-                    <Switch>
-                        <Route exact path="/" component={SignUp}/>
-                        <Route path={"/inspiration"} component={Inspirations}/>
-
-                    </Switch>
-
-                    <Footer/>
-                </Grid>
+                </Provider>
             </BrowserRouter>
         )
     }
