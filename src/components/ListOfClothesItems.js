@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, FormControl, Col, Row} from 'react-bootstrap';
+import {Row} from 'react-bootstrap';
 
 
 import ClothItem from '../components/ClothItem';
@@ -15,9 +15,15 @@ class ListOfClothesItems extends Component {
             .then(rsp => rsp.json())
             .then(data => {
                 const result = data.response
-                    .filter(item=> item.photos && item.photos.length)
-                    .map(item=> item.photos[0].original_size.url)
+                    .filter(item => item.photos && item.photos.length)
+                    .map(item => (
+                        {
+                            img:item.photos[0].original_size.url,
+                            favorite: false
+                        }
+                    ))
                 this.setState({itemsList: result});
+
                 console.log(this.state.itemsList)
             });
     }
@@ -26,11 +32,11 @@ class ListOfClothesItems extends Component {
     render() {
         return (
             <Row>
-                {this.state.itemsList.map(item =>
+                {this.state.itemsList.map((item, id) =>
                         <ClothItem
-
-                            img={item}
-
+                            key= {id}
+                            id= {id}
+                            img= {item.img}
                         />
                 )}
 

@@ -5,9 +5,7 @@ import { Col, Thumbnail} from 'react-bootstrap';
 const ClothItem = (props) => {
     const item = {
         id: props.id,
-        title:props.title,
         img: props.img,
-        gender:props.gender,
     }
 
     return (
