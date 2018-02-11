@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Row} from 'react-bootstrap';
 
+import {connect} from "react-redux"
 
 import ClothItem from '../components/ClothItem';
 
@@ -10,22 +11,9 @@ class ListOfClothesItems extends Component {
         itemsList: []
     };
 
-    componentDidMount() {
-        fetch("https://api.tumblr.com/v2/tagged?tag=winter+woman&api_key=W03IyldDeAXIxO8CfqeQ7wFvuOAdSNNjz67l7jGNJdcg7ku7ub")
-            .then(rsp => rsp.json())
-            .then(data => {
-                const result = data.response
-                    .filter(item => item.photos && item.photos.length)
-                    .map(item => (
-                        {
-                            img:item.photos[0].original_size.url,
-                            favorite: false
-                        }
-                    ))
-                this.setState({itemsList: result});
 
-                console.log(this.state.itemsList)
-            });
+    componentDidMount() {
+        this.props.getItemsFromApi();
     }
 
 
@@ -45,6 +33,38 @@ class ListOfClothesItems extends Component {
     }
 }
 
+const getData = () => {
+    return (dispatch) => {
+        dispatch({type: "PENDING"});
 
+        console.log(dispatch)
 
-export default ListOfClothesItems;
+        fetch("https://api.tumblr.com/v2/tagged?tag=winter+woman&api_key=W03IyldDeAXIxO8CfqeQ7wFvuOAdSNNjz67l7jGNJdcg7ku7ub")
+            .then(rsp => rsp.json())
+            .then(data => {
+                dispatch({
+                    type: "SUCCESS",
+                    itemsList: data.response
+                        .filter(item => item.photos && item.photos.length)
+                        .map(item => {
+                            return {
+                                img: item.photos[0].original_size.url,
+                                favorite: false
+                            }
+                        })
+
+                });
+            }).catch(err => {
+                dispatch({type: "ERROR"})
+            });
+}};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getItemsFromApi: () => dispatch(getData())
+    }
+};
+
+const connectedItems = connect(null, mapDispatchToProps)(ListOfClothesItems);
+
+export {connectedItems as ListOfClothesItems};

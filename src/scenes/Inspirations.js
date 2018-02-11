@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Row, Col, Button } from 'react-bootstrap';
+import {Row, Col } from 'react-bootstrap';
 
-import ListOfClothesItems from '../components/ListOfClothesItems';
+import {ListOfClothesItems} from '../components/ListOfClothesItems';
 
 
 
