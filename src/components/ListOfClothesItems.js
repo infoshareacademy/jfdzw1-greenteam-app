@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Form, FormControl, Col, Row} from 'react-bootstrap';
 
-import dataset from '../dataset/dataset.json';
 
 import ClothItem from '../components/ClothItem';
 
@@ -12,7 +11,7 @@ class ListOfClothesItems extends Component {
     };
 
     componentDidMount() {
-        fetch("https://api.tumblr.com/v2/tagged?tag=winter+cloth&api_key=W03IyldDeAXIxO8CfqeQ7wFvuOAdSNNjz67l7jGNJdcg7ku7ub")
+        fetch("https://api.tumblr.com/v2/tagged?tag=winter+woman&api_key=W03IyldDeAXIxO8CfqeQ7wFvuOAdSNNjz67l7jGNJdcg7ku7ub")
             .then(rsp => rsp.json())
             .then(data => {
                 const result = data.response
