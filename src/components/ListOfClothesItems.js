@@ -45,4 +45,6 @@ class ListOfClothesItems extends Component {
     }
 }
 
+
+
 export default ListOfClothesItems;
