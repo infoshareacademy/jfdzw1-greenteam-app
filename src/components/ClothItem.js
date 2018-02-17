@@ -8,6 +8,7 @@ const ClothItem = (props) => {
         img: props.img,
     }
 
+
     return (
         <Col xs={12} sm={6} md={3}>
 

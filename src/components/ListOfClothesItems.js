@@ -7,20 +7,14 @@ import ClothItem from '../components/ClothItem';
 
 class ListOfClothesItems extends Component {
 
-    state = {
-        itemsList: []
-    };
-
-
     componentDidMount() {
         this.props.getItemsFromApi();
     }
 
-
     render() {
         return (
             <Row>
-                {this.state.itemsList.map((item, id) =>
+                {this.props.items.map((item, id) =>
                         <ClothItem
                             key= {id}
                             id= {id}
@@ -33,11 +27,15 @@ class ListOfClothesItems extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        items: state.clothesItems.items
+    }
+};
+
 const getData = () => {
     return (dispatch) => {
         dispatch({type: "PENDING"});
-
-        console.log(dispatch)
 
         fetch("https://api.tumblr.com/v2/tagged?tag=winter+woman&api_key=W03IyldDeAXIxO8CfqeQ7wFvuOAdSNNjz67l7jGNJdcg7ku7ub")
             .then(rsp => rsp.json())
@@ -65,6 +63,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-const connectedItems = connect(null, mapDispatchToProps)(ListOfClothesItems);
+const connectedItems = connect(mapStateToProps, mapDispatchToProps)(ListOfClothesItems);
 
 export {connectedItems as ListOfClothesItems};

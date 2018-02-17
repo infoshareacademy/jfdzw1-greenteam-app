@@ -21,4 +21,4 @@ const login = (state = initState, action) => {
     }
 };
 
-export default login;
+export {login};

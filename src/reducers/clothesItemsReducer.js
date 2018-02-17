@@ -17,4 +17,4 @@ const clothesItemsReducer = (state = initState, action) => {
     }
 };
 
-export default clothesItemsReducer;
+export {clothesItemsReducer};

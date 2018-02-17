@@ -4,7 +4,6 @@ import {Row, Col } from 'react-bootstrap';
 import {ListOfClothesItems} from '../components/ListOfClothesItems';
 
 
-
 class Inspirations extends Component {
 
     render () {
