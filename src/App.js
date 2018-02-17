@@ -11,7 +11,7 @@ import reducer from './reducers'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import {Form} from './components/SignUp';
-import Inspirations from './scenes/Inspirations';
+import {Inspirations} from './scenes/Inspirations';
 
 const store = createStore(
     reducer,
