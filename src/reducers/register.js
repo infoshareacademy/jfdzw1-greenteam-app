@@ -1,21 +1,21 @@
+
 const initState = {
     pending: false,
     hasError: false,
-    isLoged:null
+    userData: {}
 };
 
-const login= (state = initState, action) => {
+const register= (state = initState, action) => {
     switch (action.type) {
         case "PENDING":
             return {...state, pending: true};
         case "ERROR":
-            return {...state, hasError: true, pending: false, isLoged:false};
+            return {...state, hasError: true, pending: false};
         case "SUCCESS":
-            return {...state, pending: false, isLoged:action.isLoged};
+            return {...state, pending: false, userData: action.usersCreate};
         default:
             return state;
     }
 };
 
-
-export {login};
+export {register};

@@ -13,7 +13,7 @@ const Header = () => (
 
         <Navbar.Collapse>
             <Nav>
-                <LinkContainer exact to={"/"}>
+                <LinkContainer exact to={"/login"}>
                     <NavItem>Log in</NavItem>
                 </LinkContainer>
 
