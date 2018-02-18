@@ -1,9 +1,8 @@
 const initState = {
     login :'',
-    gender : 'women'
+    gender : 'men'
 
 };
-
 
 const login = (state = initState, action) => {
     console.log(action)

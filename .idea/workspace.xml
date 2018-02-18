@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="51bdcf55-464c-4ff2-9f60-dd671423d37f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/index.js" afterPath="$PROJECT_DIR$/src/reducers/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/login.js" afterPath="$PROJECT_DIR$/src/reducers/login.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scenes/Inspirations.js" afterPath="$PROJECT_DIR$/src/scenes/Inspirations.js" />
     </list>
@@ -49,12 +48,12 @@
       <file leaf-file-name="Inspirations.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scenes/Inspirations.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="62" lean-forward="false" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
+            <state relative-caret-position="-306">
+              <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <marker date="1518948101080" expanded="true" signature="1279:1538" ph="..." />
-                <marker date="1518948101080" expanded="true" signature="1418:1495" ph="..." />
+                <marker date="1518949477653" expanded="true" signature="1328:1587" ph="..." />
+                <marker date="1518949477653" expanded="true" signature="1467:1544" ph="..." />
               </folding>
             </state>
           </provider>
@@ -85,8 +84,8 @@
       <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducers/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="10" />
+            <state relative-caret-position="90">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -164,7 +163,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="173" />
     <option name="y" value="35" />
-    <option name="width" value="1493" />
+    <option name="width" value="1694" />
     <option name="height" value="960" />
   </component>
   <component name="ProjectView">
@@ -396,17 +395,24 @@
       <option name="project" value="LOCAL" />
       <updated>1518897567762</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Inspirations | metoda getData przeniesiona do class">
+      <created>1518948883215</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1518948883215</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35753000" />
+    <option name="totallyTimeSpent" value="36450000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="173" y="35" width="1493" height="960" extended-state="0" />
+    <frame x="173" y="35" width="1694" height="960" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19115646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16816278" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286517" sideWeight="0.5027285" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -460,7 +466,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge branch 'przejscie_na_zewnetrzny_serwis' into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Inspirations | obrazki wyświetlają się" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inspirations | obrazki wyświetlają się" />
+    <MESSAGE value="Inspirations | metoda getData przeniesiona do class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inspirations | metoda getData przeniesiona do class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -978,24 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ListOfClothesItems.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="2" lean-forward="false" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/clothesItemsReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1008,20 +997,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="10" />
+        <state relative-caret-position="90">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/clothesItemsReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ListOfClothesItems.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="2" lean-forward="false" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scenes/Inspirations.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="62" lean-forward="false" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
+        <state relative-caret-position="-306">
+          <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <marker date="1518948101080" expanded="true" signature="1279:1538" ph="..." />
-            <marker date="1518948101080" expanded="true" signature="1418:1495" ph="..." />
+            <marker date="1518949477653" expanded="true" signature="1328:1587" ph="..." />
+            <marker date="1518949477653" expanded="true" signature="1467:1544" ph="..." />
           </folding>
         </state>
       </provider>
