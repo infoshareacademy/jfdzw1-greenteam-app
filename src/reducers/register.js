@@ -18,19 +18,4 @@ const register= (state = initState, action) => {
     }
 };
 
-
-
-
-/*const login = (state = initState, action) => {
-
-    switch (action.type) {
-        case 'REGISTERING':
-            console.log(action)
-            return state;
-        default:
-            return state;
-    }
-};*/
-
-
 export {register};

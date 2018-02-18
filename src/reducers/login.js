@@ -1,7 +1,7 @@
 const initState = {
     pending: false,
     hasError: false,
-    loginData: {}
+    isLoged:null
 };
 
 const login= (state = initState, action) => {
@@ -9,9 +9,9 @@ const login= (state = initState, action) => {
         case "PENDING":
             return {...state, pending: true};
         case "ERROR":
-            return {...state, hasError: true, pending: false};
+            return {...state, hasError: true, pending: false, isLoged:false};
         case "SUCCESS":
-            return {...state, pending: false, userDataLogin: action.loginAccount};
+            return {...state, pending: false, isLoged:action.isLoged};
         default:
             return state;
     }

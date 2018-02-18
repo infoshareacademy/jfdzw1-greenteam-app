@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Form, FormGroup, ControlLabel, Col, FormControl,Radio, Button} from 'react-bootstrap'
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router'
+import { NavLink } from "react-router-dom";
 
 class Login extends Component {
     constructor(props) {
@@ -39,9 +40,11 @@ class Login extends Component {
             }).then(rsp => rsp.json()).then(data => {
                 dispatch({
                     type: "SUCCESS",
-                    loginAccount: data.response
+                    isLoged: data.isAuthenticated
                 });
-
+                if (data.isAuthenticated) {
+                    this.props.history.push('/inspiration')
+                }
 
             }).catch(err => {
                 dispatch({type: "ERROR"})
@@ -85,6 +88,10 @@ class Login extends Component {
                         </Col>
                     </FormGroup>
                 </Form>
+                <NavLink exact to={"/register"} activeClassName="bg-success">
+                    Register
+                </NavLink>
+                {this.props.isLoged === false ?<p>Wrong password or login</p> : null}
             </div>
         );
     }
@@ -97,6 +104,12 @@ const mapStateDispatchToProps = (dispatch) => {
     }
 }
 
-const connectedLogin = connect (null, mapStateDispatchToProps)(withRouter(Login));
+const mapStateToProps = (state) => {
+    return {
+        isLoged:state.login.isLoged
+    }
+}
+
+const connectedLogin = connect (mapStateToProps, mapStateDispatchToProps)(withRouter(Login));
 
 export {connectedLogin as Login}
