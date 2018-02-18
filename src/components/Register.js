@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {Form, FormGroup, ControlLabel, Col, FormControl, Checkbox, Button} from 'react-bootstrap'
+import {Form, FormGroup, ControlLabel, Col, FormControl,Radio, Button} from 'react-bootstrap'
 import {connect} from 'react-redux';
+import { withRouter } from 'react-router'
 
-class SignUp extends Component {
+class Register extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,15 +16,41 @@ class SignUp extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.register({
-            email: this.state.email,
-            login : this.state.login,
-            gender : this.state.gender
-        });
+        this.props.register(this.register);
     }
 
+    register = ()=> {
 
-    render() {
+        const dataRegister = {
+            email: this.email.value,
+            login: this.login.value,
+            gender: this.gender,
+            password: this.password.value
+        }
+
+
+        return (dispatch) => {
+            dispatch({type: "PENDING"});
+
+            fetch(`http://api.isa-jfdzw1.vipserv.org/greenteam/user`, {
+                method: 'POST',
+                body: JSON.stringify(dataRegister),
+                headers: new Headers({
+                    'Content-Type': 'application/json'
+                })
+            }).then(rsp => rsp.json()).then(data => {
+                dispatch({
+                    type: "SUCCESS",
+                    usersCreate: dataRegister
+                });
+                this.props.history.push('/login')
+            }).catch(err => {
+                dispatch({type: "ERROR"})
+            });
+        };
+    }
+
+    render(){console.log(this.props)
         return (
             <div>
                 <h2>Sign Up</h2>
@@ -64,11 +91,9 @@ class SignUp extends Component {
                     </FormGroup>
 
                     <FormGroup>
-                        <Col smOffset={2} sm={10} inputRef={ref => {
-                            this.gender = ref;
-                        }}>
-                            <Checkbox>Female </Checkbox>
-                            <Checkbox>Male</Checkbox>
+                        <Col smOffset={2} sm={10}>
+                            <Radio onClick={()=>this.gender="female"} name="gender">Female </Radio>
+                            <Radio onClick={()=>this.gender="man"} name="gender">Male</Radio>
                         </Col>
                     </FormGroup>
                     <FormGroup>
@@ -82,15 +107,13 @@ class SignUp extends Component {
     }
 
 }
+
 const mapStateDispatchToProps = (dispatch) => {
     return {
-        register:(formdata) => dispatch ({
-            type: "REGISTERING",
-            dataform: formdata
-        })
+        register:(reg) => dispatch (reg())
     }
 }
 
-const connectedSignUp = connect (null, mapStateDispatchToProps)(SignUp);
+const connectedRegister = connect (null, mapStateDispatchToProps)(withRouter(Register));
 
-export {connectedSignUp as Form}
+export {connectedRegister as Register}

@@ -10,8 +10,10 @@ import reducer from './reducers'
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import {Form} from './components/SignUp';
+import {Register} from './components/Register';
+import {Login} from './components/Login';
 import {Inspirations} from './scenes/Inspirations';
+
 
 const store = createStore(
     reducer,
@@ -30,8 +32,9 @@ class App extends React.Component {
                         <h1>Hello</h1>
                         <Header/>
                         <Switch>
-                            <Route exact path="/" component={Form}/>
                             <Route path={"/inspiration"} component={Inspirations}/>
+                            <Route path={"/register"} component={Register}/>
+                            <Route path={"/login"} component={Login}/>
                         </Switch>
                         <Footer/>
                     </Grid>

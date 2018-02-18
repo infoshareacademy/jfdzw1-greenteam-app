@@ -1,23 +1,21 @@
 const initState = {
-    login :'',
-    gender : 'men'
-
+    pending: false,
+    hasError: false,
+    loginData: {}
 };
 
-const login = (state = initState, action) => {
-    console.log(action)
+const login= (state = initState, action) => {
     switch (action.type) {
-        case '':
-            console.log(state)
-            const {colorName} = action;
-            return {
-                ...state,
-                [colorName]: state[colorName] + action.base
-            };
-
+        case "PENDING":
+            return {...state, pending: true};
+        case "ERROR":
+            return {...state, hasError: true, pending: false};
+        case "SUCCESS":
+            return {...state, pending: false, userDataLogin: action.loginAccount};
         default:
             return state;
     }
 };
+
 
 export {login};
