@@ -1,6 +1,6 @@
 const initState = {
-   login :'',
-    gender : ''
+    login :'',
+    gender : 'women'
 
 };
 
