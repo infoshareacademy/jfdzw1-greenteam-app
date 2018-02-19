@@ -8,15 +8,17 @@ import ListOfClothesItems from '../components/ListOfClothesItems';
 class Inspirations extends Component {
 
     componentDidMount() {
-        this.props.getItemsFromApi(this.getData, this.props.user.gender);
+        this.props.getItemsFromApi(this.getData);
     }
 
-    getData (userGender) {
+    getData () {
+        const seasons = ['winter', 'spring', 'summer', 'autumn'];
+        const getRandomSeason = Math.floor (Math.random () * seasons.length);
 
         return (dispatch) => {
             dispatch({type: "PENDING"});
 
-            fetch(`https://api.tumblr.com/v2/tagged?tag=winter+${userGender}&api_key=W03IyldDeAXIxO8CfqeQ7wFvuOAdSNNjz67l7jGNJdcg7ku7ub`)
+            fetch(`https://api.tumblr.com/v2/tagged?tag=${seasons[getRandomSeason]}+men&api_key=W03IyldDeAXIxO8CfqeQ7wFvuOAdSNNjz67l7jGNJdcg7ku7ub`)
                 .then(rsp => rsp.json())
                 .then(data => {
                     dispatch({
@@ -61,7 +63,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getItemsFromApi: (getData,userGender) => dispatch(getData(userGender))
+        getItemsFromApi: (getData) => dispatch(getData())
     }
 };
 
