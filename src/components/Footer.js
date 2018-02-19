@@ -1,28 +1,45 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
-const Footer = () => (
+import { NavLink } from 'react-router-dom';
 
+class Footer extends Component {
+    render () {
+        return (
+            <div>
+                <hr/>
 
-    <div>
-        <hr/>
-
-        <ul className="list-inline">
-            <li>
-                <NavLink exact to={"/"} activeClassName="bg-success">
-                   Log in
-                </NavLink>
-            </li>
-
-            <li>
-                <NavLink activeClassName="bg-success" to={"/inspiration"}>
-                    Inspiration
-                </NavLink>
-            </li>
+                <ul className="list-inline">
+                    <li>
+                        <NavLink exact to={"/"} activeClassName="bg-success">
+                            Log in
+                        </NavLink>
+                    </li>
 
 
-        </ul>
-    </div>
-);
 
-export default Footer;
+                    {this.props.user.isLoged ?
+                        <li>
+                            <NavLink activeClassName="bg-success" to={"/inspiration"}>
+                                Inspiration
+                            </NavLink>
+                        </li>
+                        :
+                        null
+                    }
+
+                </ul>
+            </div>
+        )
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        user: state.login
+    }
+};
+
+const connectedItems = connect(mapStateToProps)(Footer);
+
+export {connectedItems as Footer};

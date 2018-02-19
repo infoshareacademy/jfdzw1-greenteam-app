@@ -9,7 +9,7 @@ import {createStore, applyMiddleware} from 'redux';
 import reducer from './reducers'
 
 import {Header} from './components/Header';
-import Footer from './components/Footer';
+import {Footer} from './components/Footer';
 import {Register} from './components/Register';
 import {Login} from './components/Login';
 import {Inspirations} from './scenes/Inspirations';
