@@ -1,0 +1,18 @@
+.colthItem {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 3px;
+    margin: 5px;
+}
+
+.thumbnail {
+    width: 230px;
+    height: 360px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.addToFavorites {
+    margin: auto;
+    background-color: red;
+}

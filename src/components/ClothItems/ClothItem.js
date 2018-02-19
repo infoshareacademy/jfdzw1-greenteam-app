@@ -11,9 +11,9 @@ const ClothItem = (props) => {
 
     return (
         <Col xs={12} sm={6} md={3}>
-            <div className='colthItem'>
+            <div className ='colthItem'>
                 <Thumbnail href="#" alt="171x180" src={item.img} />
-                <Button>Add to favorites</Button>
+                <Button className ='addToFavorites' >Add to favorites</Button>
             </div>
         </Col>
     )

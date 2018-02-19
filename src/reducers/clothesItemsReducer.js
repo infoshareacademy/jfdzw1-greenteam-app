@@ -6,11 +6,11 @@ const initState = {
 
 const clothesItemsReducer = (state = initState, action) => {
     switch (action.type) {
-        case "PENDING":
+        case "PENDING_GET_ITEMS":
             return {...state, pending: true};
-        case "ERROR":
+        case "ERROR_GET_ITEMS":
             return {...state, hasError: true, pending: false};
-        case "SUCCESS":
+        case "SUCCESS_GET_ITEMS":
             return {...state, pending: false, items: action.itemsList};
         default:
             return state;

@@ -16,13 +16,13 @@ class Inspirations extends Component {
         const getRandomSeason = Math.floor (Math.random () * seasons.length);
 
         return (dispatch) => {
-            dispatch({type: "PENDING"});
+            dispatch({type: "PENDING_GET_ITEMS"});
 
             fetch(`https://api.tumblr.com/v2/tagged?tag=${seasons[getRandomSeason]}+men&api_key=W03IyldDeAXIxO8CfqeQ7wFvuOAdSNNjz67l7jGNJdcg7ku7ub`)
                 .then(rsp => rsp.json())
                 .then(data => {
                     dispatch({
-                        type: "SUCCESS",
+                        type: "SUCCESS_GET_ITEMS",
                         itemsList: data.response
                             .filter(item => item.photos && item.photos.length)
                             .map(item => {
@@ -33,7 +33,7 @@ class Inspirations extends Component {
                             })
                     });
                 }).catch(err => {
-                dispatch({type: "ERROR"})
+                dispatch({type: "ERROR_GET_ITEMS"})
             });
         }
     };

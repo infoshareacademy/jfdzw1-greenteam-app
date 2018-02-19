@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51bdcf55-464c-4ff2-9f60-dd671423d37f" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/ClothItem.js" afterPath="$PROJECT_DIR$/src/components/ClothItems/ClothItem.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/ListOfClothesItems.js" afterPath="$PROJECT_DIR$/src/components/ClothItems/ListOfClothesItems.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Header.js" afterPath="$PROJECT_DIR$/src/components/Header.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ClothItems/ClothItem.js" afterPath="$PROJECT_DIR$/src/components/ClothItems/ClothItem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/clothesItemsReducer.js" afterPath="$PROJECT_DIR$/src/reducers/clothesItemsReducer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scenes/Inspirations.js" afterPath="$PROJECT_DIR$/src/scenes/Inspirations.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,11 +31,11 @@
       <file leaf-file-name="Inspirations.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scenes/Inspirations.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="20" column="83" lean-forward="false" selection-start-line="20" selection-start-column="83" selection-end-line="20" selection-end-column="83" />
+            <state relative-caret-position="374">
+              <caret line="35" column="48" lean-forward="false" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
               <folding>
-                <marker date="1519067264664" expanded="true" signature="1460:1719" ph="..." />
-                <marker date="1519067264664" expanded="true" signature="1599:1676" ph="..." />
+                <marker date="1519068028222" expanded="true" signature="1490:1749" ph="..." />
+                <marker date="1519068028222" expanded="true" signature="1629:1706" ph="..." />
               </folding>
             </state>
           </provider>
@@ -45,8 +44,8 @@
       <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-153">
-              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="80" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -77,7 +76,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="170">
               <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
@@ -86,21 +85,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClothItem.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ClothItem.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/ClothItems/ClothItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-              <folding />
+            <state relative-caret-position="204">
+              <caret line="15" column="50" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClothItem.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClothItem.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ClothItems/ClothItem.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="15" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+            <state relative-caret-position="238">
+              <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -119,8 +120,8 @@
       <file leaf-file-name="clothesItemsReducer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducers/clothesItemsReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+            <state relative-caret-position="204">
+              <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -151,7 +152,6 @@
         <option value="$PROJECT_DIR$/src/components/ClothItem.js" />
         <option value="$PROJECT_DIR$/src/components/ListOfClothesItems.js" />
         <option value="$PROJECT_DIR$/src/components/SignUp.js" />
-        <option value="$PROJECT_DIR$/src/reducers/clothesItemsReducer.js" />
         <option value="$PROJECT_DIR$/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/Register.js" />
@@ -159,10 +159,11 @@
         <option value="$PROJECT_DIR$/src/reducers/register.js" />
         <option value="$PROJECT_DIR$/src/components/Login.js" />
         <option value="$PROJECT_DIR$/src/reducers/login.js" />
-        <option value="$PROJECT_DIR$/src/scenes/Inspirations.js" />
         <option value="$PROJECT_DIR$/src/components/ClothItems/ClothItems.css" />
         <option value="$PROJECT_DIR$/src/components/ClothItems/ClothItem.js" />
         <option value="$PROJECT_DIR$/src/components/ClothItems/ClothItem.css" />
+        <option value="$PROJECT_DIR$/src/reducers/clothesItemsReducer.js" />
+        <option value="$PROJECT_DIR$/src/scenes/Inspirations.js" />
       </list>
     </option>
   </component>
@@ -291,7 +292,7 @@
       <workItem from="1518457927928" duration="2145000" />
       <workItem from="1518896890515" duration="1179000" />
       <workItem from="1518957110833" duration="13024000" />
-      <workItem from="1519065606419" duration="2108000" />
+      <workItem from="1519065606419" duration="2559000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'przejscie_na_zewnetrzny_serwis' into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1517160446573</created>
@@ -321,11 +322,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519067181131</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Inspirations | przycisk add to favorites dodany na item">
+      <created>1519067757633</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1519067757633</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51582000" />
+    <option name="totallyTimeSpent" value="52033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="5" y="20" width="1386" height="788" extended-state="0" />
@@ -378,7 +386,8 @@
     <MESSAGE value="Inspirations | obrazki wyświetlają się" />
     <MESSAGE value="Inspirations | metoda getData przeniesiona do class" />
     <MESSAGE value="Inspirations | losowa pora roku dodana" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inspirations | losowa pora roku dodana" />
+    <MESSAGE value="Inspirations | przycisk add to favorites dodany na item" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inspirations | przycisk add to favorites dodany na item" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -425,7 +434,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="47" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="2" selection-end-column="47" />
-          <folding />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -468,7 +479,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -536,7 +549,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-          <folding />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -596,7 +611,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-          <folding />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -631,7 +648,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="47" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="2" selection-end-column="47" />
-          <folding />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -713,32 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/clothesItemsReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ClothItems/ListOfClothesItems.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -765,40 +758,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ClothItems/ClothItem.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Inspirations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="35" column="48" lean-forward="false" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+          <folding>
+            <marker date="1519068028222" expanded="true" signature="1490:1749" ph="..." />
+            <marker date="1519068028222" expanded="true" signature="1629:1706" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/clothesItemsReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="80" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Inspirations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="83" lean-forward="false" selection-start-line="20" selection-start-column="83" selection-end-line="20" selection-end-column="83" />
-          <folding>
-            <marker date="1519067264664" expanded="true" signature="1460:1719" ph="..." />
-            <marker date="1519067264664" expanded="true" signature="1599:1676" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ClothItems/ClothItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ClothItems/ClothItem.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="15" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="15" column="50" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
