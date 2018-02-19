@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, NavItem, MenuItem, Nav, NavDropdown, Badge } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {LinkContainer} from "react-router-bootstrap"
-import ListOfClothesItems from "./ListOfClothesItems";
+import ListOfClothesItems from "./ClothItems/ListOfClothesItems";
 
 const Header = () => (
     <Navbar collapseOnSelect>

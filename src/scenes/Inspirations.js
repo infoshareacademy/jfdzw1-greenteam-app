@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Row, Col} from 'react-bootstrap';
 import {connect} from 'react-redux';
 
-import ListOfClothesItems from '../components/ListOfClothesItems';
+import ListOfClothesItems from '../components/ClothItems/ListOfClothesItems';
 
 
 class Inspirations extends Component {

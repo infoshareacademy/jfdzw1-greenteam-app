@@ -1,7 +1,7 @@
 import React from 'react';
 import {Row} from 'react-bootstrap';
 
-import ClothItem from '../components/ClothItem';
+import ClothItem from './ClothItem';
 
 const ListOfClothesItems = (props) => {
 
