@@ -1,29 +1,47 @@
-import React from "react";
-import { Navbar, NavItem, MenuItem, Nav, NavDropdown, Badge } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import React, {Component} from "react";
+import { Navbar, Nav,NavItem} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap"
-import ListOfClothesItems from "./ClothItems/ListOfClothesItems";
 
-const Header = () => (
-    <Navbar collapseOnSelect>
-        <Navbar.Header>
-            <Navbar.Brand>Outfits by weather</Navbar.Brand>
-            <Navbar.Toggle />
-        </Navbar.Header>
+import {connect} from 'react-redux';
 
-        <Navbar.Collapse>
-            <Nav>
-                <LinkContainer exact to={"/login"}>
-                    <NavItem>Log in</NavItem>
-                </LinkContainer>
+class Header extends Component {
 
-                <LinkContainer to={"/inspiration"}>
-                    <NavItem>Inspirations</NavItem>
-                </LinkContainer>
+render () {
 
-            </Nav>
-        </Navbar.Collapse>
-    </Navbar>
-);
+    return (
+        <Navbar collapseOnSelect>
+            <Navbar.Header>
+                <Navbar.Brand>Outfits by weather</Navbar.Brand>
+                <Navbar.Toggle/>
+            </Navbar.Header>
 
-export default Header;
+            <Navbar.Collapse>
+                <Nav>
+                    <LinkContainer exact to={"/login"}>
+                        <NavItem>Log in</NavItem>
+                    </LinkContainer>
+
+                    {this.props.user.isLoged ?
+                        <LinkContainer to={"/inspiration"}>
+                            <NavItem>Inspirations</NavItem>
+                        </LinkContainer>
+                        :
+                        null
+                    }
+
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+    )
+}};
+
+
+const mapStateToProps = (state) => {
+    return {
+        user: state.login
+    }
+};
+
+const connectedItems = connect(mapStateToProps)(Header);
+
+export {connectedItems as Header};
