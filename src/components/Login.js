@@ -44,7 +44,6 @@ class Login extends Component {
                     isLoged: true,
                     userData: data
                 });
-                console.log(data)
 
                 if (data.login == dataLogin.login) {
 

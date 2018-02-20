@@ -8,17 +8,19 @@ import ListOfClothesItems from '../components/ClothItems/ListOfClothesItems';
 class Inspirations extends Component {
 
     componentDidMount() {
-        this.props.getItemsFromApi(this.getData);
+        this.props.getItemsFromApi(this.getData,this.props.user.gender);
     }
 
-    getData () {
+    getData (userGender) {
         const seasons = ['winter', 'spring', 'summer', 'autumn'];
         const getRandomSeason = Math.floor (Math.random () * seasons.length);
+
+        const inspirations = (userGender === 'female') ? "fashion" : "inspirations";
 
         return (dispatch) => {
             dispatch({type: "PENDING_GET_ITEMS"});
 
-            fetch(`https://api.tumblr.com/v2/tagged?tag=${seasons[getRandomSeason]}+men&api_key=W03IyldDeAXIxO8CfqeQ7wFvuOAdSNNjz67l7jGNJdcg7ku7ub`)
+            fetch(`https://api.tumblr.com/v2/tagged?tag=${seasons[getRandomSeason]}+${inspirations}&api_key=W03IyldDeAXIxO8CfqeQ7wFvuOAdSNNjz67l7jGNJdcg7ku7ub`)
                 .then(rsp => rsp.json())
                 .then(data => {
                     dispatch({
@@ -40,9 +42,8 @@ class Inspirations extends Component {
 
     render() {
 
-        console.log(this.props.user)
-
         return (
+
             <Row className="show-grid">
                 <Col xs={12}>
                     <h2>Inspirations</h2>
@@ -60,13 +61,13 @@ class Inspirations extends Component {
 const mapStateToProps = (state) => {
     return {
         items: state.clothesItems.items,
-        user: state.login
+        user: state.login.userData
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getItemsFromApi: (getData) => dispatch(getData())
+        getItemsFromApi: (getData,userGender) => dispatch(getData(userGender))
     }
 };
 
