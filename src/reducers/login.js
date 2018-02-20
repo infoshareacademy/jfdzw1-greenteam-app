@@ -1,17 +1,19 @@
 const initState = {
     pending: false,
     hasError: false,
-    isLoged:null
+    isLoged: null,
+    userData: {}
 };
 
 const login= (state = initState, action) => {
+
     switch (action.type) {
-        case "PENDING":
+        case "PENDING_LOGIN":
             return {...state, pending: true};
-        case "ERROR":
+        case "ERROR_LOGIN":
             return {...state, hasError: true, pending: false, isLoged:false};
-        case "SUCCESS":
-            return {...state, pending: false, isLoged:action.isLoged};
+        case "SUCCESS_LOGIN":
+            return {...state, pending: false, isLoged:action.isLoged, userData:action.userData};
         default:
             return state;
     }

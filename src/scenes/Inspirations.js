@@ -39,6 +39,9 @@ class Inspirations extends Component {
     };
 
     render() {
+
+        console.log(this.props.user)
+
         return (
             <Row className="show-grid">
                 <Col xs={12}>

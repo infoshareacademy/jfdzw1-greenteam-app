@@ -3,6 +3,7 @@ import {Form, FormGroup, ControlLabel, Col, FormControl,Radio, Button} from 'rea
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router'
 import { NavLink } from "react-router-dom";
+import {login} from "../reducers/login";
 
 class Login extends Component {
     constructor(props) {
@@ -29,9 +30,9 @@ class Login extends Component {
 
 
         return (dispatch) => {
-            dispatch({type: "PENDING"});
+            dispatch({type: "PENDING_LOGIN"});
 
-            fetch(`http://api.isa-jfdzw1.vipserv.org/greenteam/user/authenticate`, {
+            fetch(`http://api.isa-jfdzw1.vipserv.org/greenteam/user/authenticate2`, {
                 method: 'POST',
                 body: JSON.stringify(dataLogin),
                 headers: new Headers({
@@ -39,15 +40,19 @@ class Login extends Component {
                 })
             }).then(rsp => rsp.json()).then(data => {
                 dispatch({
-                    type: "SUCCESS",
-                    isLoged: data.isAuthenticated
+                    type: "SUCCESS_LOGIN",
+                    isLoged: true,
+                    userData: data
                 });
-                if (data.isAuthenticated) {
+                console.log(data)
+
+                if (data.login == dataLogin.login) {
+
                     this.props.history.push('/inspiration')
                 }
 
             }).catch(err => {
-                dispatch({type: "ERROR"})
+                dispatch({type: "ERROR_LOGIN"})
             });
         };
     }
