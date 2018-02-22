@@ -25,9 +25,32 @@ const login= (state = initState, action) => {
         return updatedState
     };
 
+
+    const removeFavorite = () => {
+        const {id} = action;
+
+        const updatedStateRemove = {...state};
+        const updatedStateUserDate = {...updatedStateRemove.userData};
+        const updatedStateItemsRemove = [...updatedStateUserDate.favorites];
+
+        const itemToRemoveIndex = updatedStateItemsRemove.findIndex(item => item.img === id);
+
+        const itemToRemove = [
+            ...updatedStateItemsRemove.slice(0, itemToRemoveIndex),
+            ...updatedStateItemsRemove.slice(itemToRemoveIndex + 1)
+        ];
+
+        updatedStateUserDate.favorites = itemToRemove;
+        updatedStateRemove.userData = updatedStateUserDate;
+
+        return updatedStateRemove;
+    };
+
     switch (action.type) {
         case "ADD_INSPIRATION_TO_FAVORITES":
             return addInspirtaionToFavorites();
+        case "REMOVE_FAVORITE":
+            return removeFavorite();
         case "PENDING_LOGIN":
             return {...state, pending: true};
         case "ERROR_LOGIN":

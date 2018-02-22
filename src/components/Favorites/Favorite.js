@@ -8,9 +8,8 @@ const Favorite = (props) => {
         img: props.img,
     };
 
-    const handleClickItemAddedToFavorites = () => {
-        props.addedToFavorites(item.img);
-        props.addInspirationToFavorites(item.img);
+    const handleClickRemoveFavorite = () => {
+        props.removeFavorite(item.img);
     };
 
     return (
@@ -18,7 +17,7 @@ const Favorite = (props) => {
             <div className ='colthItem'>
                 <Thumbnail href="#" alt="171x180" src={item.img} />
 
-                <button className ='addedToFavorites'>Remove from list</button>
+                <button className ='addedToFavorites' onClick={handleClickRemoveFavorite}>Remove from list</button>
 
 
             </div>
@@ -29,12 +28,8 @@ const Favorite = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addedToFavorites: (id) => dispatch({
-            type: "ADD_TO_FAVORITES",
-            id
-        }),
-        addInspirationToFavorites: (id) => dispatch ({
-            type: "ADD_INSPIRATION_TO_FAVORITES",
+        removeFavorite: (id) => dispatch({
+            type: "REMOVE_FAVORITE",
             id
         })
     }
