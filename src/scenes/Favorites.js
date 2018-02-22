@@ -14,8 +14,12 @@ class Favorites extends Component {
                 <Col xs={12}>
                     <h2>Favorites</h2>
                     <hr/>
+                    {!this.props.user.isSaved ?
+                        <button className ='saveList'>Save list</button>
+                        : null
+                    }
                     <ListOfFavorites
-                        favoritesList={this.props.user.favorites}
+                        favoritesList={this.props.user.userData.favorites}
                     />
 
 
@@ -27,7 +31,7 @@ class Favorites extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.login.userData
+        user: state.login
     }
 };
 

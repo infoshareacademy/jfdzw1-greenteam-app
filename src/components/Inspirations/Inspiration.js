@@ -1,8 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import './Inspiration.css';
-
 import { Col, Thumbnail} from 'react-bootstrap';
 
 const ClothItem = (props) => {
