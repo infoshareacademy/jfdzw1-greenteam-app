@@ -1,14 +1,14 @@
 import React from 'react';
 import {Row} from 'react-bootstrap';
 
-import {ClothItem} from './ClothItem';
+import {Inspiration} from './Inspiration';
 
-const ListOfClothesItems = (props) => {
+const ListOfInspirations = (props) => {
 
         return (
             <Row>
                 {props.clothesList.map((item,id) =>
-                        <ClothItem
+                        <Inspiration
                             key= {id}
                             img= {item.img}
                             favorite={item.favorite}
@@ -18,6 +18,6 @@ const ListOfClothesItems = (props) => {
         )
 };
 
-export default ListOfClothesItems;
+export default ListOfInspirations;
 
 

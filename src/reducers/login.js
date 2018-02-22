@@ -5,8 +5,6 @@ const initState = {
     userData: {}
 };
 
-
-
 const login= (state = initState, action) => {
     console.log(state.userData)
 

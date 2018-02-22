@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import './ClothItem.css';
+import './Inspiration.css';
 
-import { Col, Thumbnail, Button} from 'react-bootstrap';
+import { Col, Thumbnail} from 'react-bootstrap';
 
 const ClothItem = (props) => {
     const item = {
@@ -47,4 +47,4 @@ const mapDispatchToProps = (dispatch) => {
 
 const connectedCounter = connect(null, mapDispatchToProps)(ClothItem);
 
-export {connectedCounter as ClothItem};
+export {connectedCounter as Inspiration};

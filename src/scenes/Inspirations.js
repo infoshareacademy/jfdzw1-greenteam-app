@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Row, Col} from 'react-bootstrap';
 import {connect} from 'react-redux';
 
-import ListOfClothesItems from '../components/ClothItems/ListOfClothesItems';
+import ListOfInspirtaions from '../components/Inspirations/ListOfInspirations';
 
 
 class Inspirations extends Component {
@@ -48,7 +48,7 @@ class Inspirations extends Component {
                 <Col xs={12}>
                     <h2>Inspirations</h2>
                     <hr/>
-                    <ListOfClothesItems
+                    <ListOfInspirtaions
                         clothesList={this.props.items}
                     />
 
