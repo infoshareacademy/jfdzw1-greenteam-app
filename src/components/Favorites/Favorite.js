@@ -18,9 +18,8 @@ const Favorite = (props) => {
             <div className ='colthItem'>
                 <Thumbnail href="#" alt="171x180" src={item.img} />
 
-                {item.favorite ?
-                    <button className ='addedToFavorites'>Added to favorites</button>
-                    : <button className ='addToFavorites' onClick={handleClickItemAddedToFavorites}>Add to favorites</button>}
+                <button className ='addedToFavorites'>Remove from list</button>
+
 
             </div>
         </Col>

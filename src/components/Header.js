@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Navbar, Nav,NavItem} from "react-bootstrap";
+import { Navbar, Nav,NavItem, Label} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap"
 
 import {connect} from 'react-redux';
@@ -27,7 +27,9 @@ render () {
 
                     {this.props.user.isLoged ?
                         <LinkContainer to={"/inspiration"}>
-                            <NavItem>Inspirations</NavItem>
+                            <NavItem>
+                                Inspirations
+                            </NavItem>
                         </LinkContainer>
                         :
                         null
@@ -35,7 +37,14 @@ render () {
 
                     {this.props.user.isLoged ?
                         <LinkContainer to={"/favorites"}>
-                            <NavItem>Favorites</NavItem>
+                            <NavItem>Favorites
+                                {!this.props.user.isSaved ?
+                                    <Label>Save your's favorites</Label>
+                                    :
+                                    null
+                                }
+                            </NavItem>
+
                         </LinkContainer>
                         :
                         null

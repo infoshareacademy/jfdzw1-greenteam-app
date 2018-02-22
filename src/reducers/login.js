@@ -2,11 +2,12 @@ const initState = {
     pending: false,
     hasError: false,
     isLoged: null,
+    isSaved: true,
     userData: {}
 };
 
 const login= (state = initState, action) => {
-    console.log(state.userData)
+    console.log(state)
 
     const addInspirtaionToFavorites = () => {
         const {id} = action;
@@ -15,7 +16,7 @@ const login= (state = initState, action) => {
             img: id
         };
 
-        const updatedState = {...state};
+        const updatedState = {...state, isSaved: false};
         const updatedStateUserDate = {...updatedState.userData};
         const newItem = [...updatedStateUserDate.favorites, newFavorite];
         updatedStateUserDate.favorites = newItem;
