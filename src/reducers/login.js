@@ -61,7 +61,7 @@ const login= (state = initState, action) => {
         case "ERROR_UPDATE_USER_DATA":
             return {...state, hasError: true, pending: false, isSaved:false};
         case "SUCCESS_UPDATE_USER_DATA":
-            return {...state, pending: false, isSaved:action.isSaved, userData:action.userData};
+            return {...state, pending: false, isSaved:action.isSaved, userData:action.userUpdated};
         default:
             return state;
     }
