@@ -56,7 +56,7 @@ class Login extends Component {
         };
     }
 
-    render(){console.log(this.props)
+    render(){
         return (
             <div>
                 <h2>Sign Up</h2>

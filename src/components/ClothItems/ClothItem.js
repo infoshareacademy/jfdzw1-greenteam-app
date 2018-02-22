@@ -12,7 +12,8 @@ const ClothItem = (props) => {
     };
 
     const handleClickItemAddedToFavorites = () => {
-        props.addedToFavorites(props.img);
+        props.addedToFavorites(item.img);
+        props.addInspirationToFavorites(item.img);
     };
 
     return (
@@ -34,8 +35,12 @@ const mapDispatchToProps = (dispatch) => {
     return {
         addedToFavorites: (id) => dispatch({
             type: "ADD_TO_FAVORITES",
-            id,
+            id
         }),
+        addInspirationToFavorites: (id) => dispatch ({
+            type: "ADD_INSPIRATION_TO_FAVORITES",
+            id
+        })
     }
 };
 

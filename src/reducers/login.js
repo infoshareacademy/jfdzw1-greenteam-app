@@ -5,9 +5,30 @@ const initState = {
     userData: {}
 };
 
+
+
 const login= (state = initState, action) => {
+    console.log(state.userData)
+
+    const addInspirtaionToFavorites = () => {
+        const {id} = action;
+
+        const newFavorite = {
+            img: id
+        };
+
+        const updatedState = {...state};
+        const updatedStateUserDate = {...updatedState.userData};
+        const newItem = [...updatedStateUserDate.favorites, newFavorite];
+        updatedStateUserDate.favorites = newItem;
+        updatedState.userData = updatedStateUserDate;
+
+        return updatedState
+    };
 
     switch (action.type) {
+        case "ADD_INSPIRATION_TO_FAVORITES":
+            return addInspirtaionToFavorites();
         case "PENDING_LOGIN":
             return {...state, pending: true};
         case "ERROR_LOGIN":
