@@ -1,13 +1,18 @@
 import React from 'react';
-import './ClothItem.css'
+import {connect} from 'react-redux';
+
+import './ClothItem.css';
 
 import { Col, Thumbnail, Button} from 'react-bootstrap';
 
 const ClothItem = (props) => {
     const item = {
-        id: props.id,
         img: props.img,
         favorite: props.favorite
+    };
+
+    const handleClickItemAddedToFavorites = () => {
+        props.addedToFavorites(props.img);
     };
 
     return (
@@ -17,12 +22,24 @@ const ClothItem = (props) => {
 
                 {item.favorite ?
                     <button className ='addedToFavorites'>Added to favorites</button>
-                    : <button className ='addToFavorites'>Add to favorites</button>}
-
+                    : <button className ='addToFavorites' onClick={handleClickItemAddedToFavorites}>Add to favorites</button>}
 
             </div>
         </Col>
     )
 };
 
-export default ClothItem;
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addedToFavorites: (id) => dispatch({
+            type: "ADD_TO_FAVORITES",
+            id,
+        }),
+    }
+};
+
+
+const connectedCounter = connect(null, mapDispatchToProps)(ClothItem);
+
+export {connectedCounter as ClothItem};
