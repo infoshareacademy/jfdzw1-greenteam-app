@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, FormGroup, ControlLabel, Col, FormControl,Radio, Button} from 'react-bootstrap'
+import {Form, FormGroup, ControlLabel, Col, FormControl, Button} from 'react-bootstrap'
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router'
 import { NavLink } from "react-router-dom";
@@ -17,7 +17,7 @@ class Login extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.register(this.register);
-    }
+    };
 
     register = ()=> {
 
@@ -25,7 +25,7 @@ class Login extends Component {
 
             login: this.login.value,
             password: this.password.value
-        }
+        };
 
 
         return (dispatch) => {

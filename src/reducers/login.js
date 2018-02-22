@@ -7,7 +7,6 @@ const initState = {
 };
 
 const login= (state = initState, action) => {
-    console.log(state)
 
     const addInspirtaionToFavorites = () => {
         const {id} = action;
@@ -57,6 +56,12 @@ const login= (state = initState, action) => {
             return {...state, hasError: true, pending: false, isLoged:false};
         case "SUCCESS_LOGIN":
             return {...state, pending: false, isLoged:action.isLoged, userData:action.userData};
+        case "PENDING_UPDATE_USER_DATA":
+            return {...state, pending: true};
+        case "ERROR_UPDATE_USER_DATA":
+            return {...state, hasError: true, pending: false, isSaved:false};
+        case "SUCCESS_UPDATE_USER_DATA":
+            return {...state, pending: false, isSaved:action.isSaved, userData:action.userData};
         default:
             return state;
     }
