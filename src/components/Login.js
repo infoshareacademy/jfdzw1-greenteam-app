@@ -3,7 +3,6 @@ import {Form, FormGroup, ControlLabel, Col, FormControl,Radio, Button} from 'rea
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router'
 import { NavLink } from "react-router-dom";
-import {login} from "../reducers/login";
 
 class Login extends Component {
     constructor(props) {

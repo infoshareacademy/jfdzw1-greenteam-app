@@ -10,18 +10,31 @@ class Footer extends Component {
                 <hr/>
 
                 <ul className="list-inline">
-                    <li>
-                        <NavLink exact to={"/"} activeClassName="bg-success">
-                            Log in
-                        </NavLink>
-                    </li>
 
-
+                    {!this.props.user.isLoged ?
+                        <li>
+                            <NavLink exact to={"/"} activeClassName="bg-success">
+                                Log in
+                            </NavLink>
+                        </li>
+                        :
+                        null
+                    }
 
                     {this.props.user.isLoged ?
                         <li>
                             <NavLink activeClassName="bg-success" to={"/inspiration"}>
                                 Inspiration
+                            </NavLink>
+                        </li>
+                        :
+                        null
+                    }
+
+                    {this.props.user.isLoged ?
+                        <li>
+                            <NavLink activeClassName="bg-success" to={"/favorites"}>
+                                Favorites
                             </NavLink>
                         </li>
                         :

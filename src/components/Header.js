@@ -17,13 +17,25 @@ render () {
 
             <Navbar.Collapse>
                 <Nav>
-                    <LinkContainer exact to={"/login"}>
-                        <NavItem>Log in</NavItem>
-                    </LinkContainer>
+                    {!this.props.user.isLoged ?
+                        <LinkContainer exact to={"/login"}>
+                            <NavItem>Log in</NavItem>
+                        </LinkContainer>
+                        :
+                        null
+                    }
 
                     {this.props.user.isLoged ?
                         <LinkContainer to={"/inspiration"}>
                             <NavItem>Inspirations</NavItem>
+                        </LinkContainer>
+                        :
+                        null
+                    }
+
+                    {this.props.user.isLoged ?
+                        <LinkContainer to={"/favorites"}>
+                            <NavItem>Favorites</NavItem>
                         </LinkContainer>
                         :
                         null
