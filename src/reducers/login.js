@@ -47,6 +47,19 @@ const login= (state = initState, action) => {
         return updatedStateRemove;
     };
 
+    const updateUserData = () => {
+        const {userDataUpdated} = action;
+
+        const updatedState = {...state, pending:false, isSaved: true};
+        const updatedStateUserDate = {...updatedState.userData};
+
+        const dataToUpdate = {...updatedStateUserDate, userDataUpdated}
+
+        updatedState.userData = dataToUpdate;
+
+        return updatedState;
+
+    };
 
     switch (action.type) {
         case "ADD_INSPIRATION_TO_FAVORITES":
@@ -64,7 +77,7 @@ const login= (state = initState, action) => {
         case "ERROR_UPDATE_USER_DATA":
             return {...state, hasError: true, pending:false, isSaved:false};
         case "SUCCESS_UPDATE_USER_DATA":
-            return {...state, pending: false, isSaved:true, userData:action.userUpdated};
+            return updateUserData();
         default:
             return state;
     }

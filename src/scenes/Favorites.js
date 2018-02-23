@@ -31,7 +31,7 @@ class Favorites extends Component {
             }).then(rsp => rsp.json()).then(data => {
                 dispatch({
                     type: "SUCCESS_UPDATE_USER_DATA",
-                    userUpdated: userData
+                    userDataUpdated: userData
                 });
             }).catch(err => {
                 dispatch({type: "ERROR_UPDATE_USER_DATA"})
