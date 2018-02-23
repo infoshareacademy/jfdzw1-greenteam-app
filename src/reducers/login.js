@@ -7,7 +7,7 @@ const initState = {
     userData: {}
 };
 
-const login= (state = initState, action) => {
+const login = (state = initState, action) => {
 
     console.log(state);
 
@@ -54,12 +54,11 @@ const login= (state = initState, action) => {
         const updatedState = {...state, pending:false, isSaved: true};
         const updatedStateUserDate = {...updatedState.userData};
 
-        const dataToUpdate = {...updatedStateUserDate, userDataUpdated}
+        const dataToUpdate = {...updatedStateUserDate, userDataUpdated};
 
         updatedState.userData = dataToUpdate;
 
         return updatedState;
-
     };
 
     switch (action.type) {

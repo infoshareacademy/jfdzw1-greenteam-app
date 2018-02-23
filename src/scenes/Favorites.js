@@ -9,7 +9,7 @@ class Favorites extends Component {
     handleSaveList = (event) => {
         event.preventDefault();
         this.props.saveList(this.saveList);
-    }
+    };
 
     saveList = ()=> {
         const userData = {

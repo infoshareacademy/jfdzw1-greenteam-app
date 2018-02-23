@@ -3,7 +3,7 @@ import {Row, Col, Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
 
 import UserAccount from '../components/UserAccount/UserAccount';
-import EditUserAccountData from '../components/UserAccount/EditUserAccountData'
+import {EditUserAccountData} from '../components/UserAccount/EditUserAccountData'
 
 
 class Account extends Component {
@@ -43,6 +43,11 @@ class Account extends Component {
                 dispatch({type: "ERROR_REMOVE_USER"})
             });
         };
+    };
+
+    handleSaveUserChanges = (event) => {
+        event.preventDefault();
+        this.props.saveList(this.saveList);
     };
 
     render() {
