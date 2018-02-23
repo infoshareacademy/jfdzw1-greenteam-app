@@ -3,6 +3,7 @@ const initState = {
     hasError: false,
     isLoged: null,
     isSaved: true,
+    editMode: false,
     userData: {}
 };
 
@@ -79,7 +80,12 @@ const login= (state = initState, action) => {
         case "SUCCESS_UPDATE_USER_DATA":
             return updateUserData();
         case "LOG_OUT":
-            return {...state, isLoged:false};
+            return {...state, isLoged:false, editMode:false};
+        case "EDIT_MODE":
+            return {...state, editMode:true};
+        case "DISCARD_EDIT_MODE":
+            return {...state, editMode:false};
+
         default:
             return state;
     }

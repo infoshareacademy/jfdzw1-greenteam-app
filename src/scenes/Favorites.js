@@ -46,7 +46,7 @@ class Favorites extends Component {
                 <Col xs={12}>
                     <h2>Favorites</h2>
                     <hr/>
-                    <button className ='saveListBtn' onClick={this.handleSaveList}>Save list</button>
+                    <button className ='saveBtn' onClick={this.handleSaveList}>Save list</button>
                     <ListOfFavorites
                         favoritesList={this.props.user.favorites}
                     />

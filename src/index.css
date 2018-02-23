@@ -55,7 +55,7 @@ body {
   background-color: #58a7b4;
 }
 
-.saveListBtn {
+.saveBtn {
   width: 230px;
   height: 40px;
   margin: 10px;
@@ -66,9 +66,13 @@ body {
   font-weight: bold;
 }
 
-.saveListBtn:hover {
+.saveBtn:hover {
     background-color: #000000;
     color: #fff;
+}
+
+.removeBtn {
+    padding-left: 0;
 }
 
 .navbar-right {
