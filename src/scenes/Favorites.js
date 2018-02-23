@@ -23,7 +23,7 @@ class Favorites extends Component {
             dispatch({type: "PENDING_UPDATE_USER_DATA"});
 
             fetch(`http://api.isa-jfdzw1.vipserv.org/greenteam/user`, {
-                method: 'POST',
+                method: 'PUT',
                 body: JSON.stringify(userData),
                 headers: new Headers({
                     'Content-Type': 'application/json'
@@ -31,8 +31,7 @@ class Favorites extends Component {
             }).then(rsp => rsp.json()).then(data => {
                 dispatch({
                     type: "SUCCESS_UPDATE_USER_DATA",
-                    userUpdated: userData,
-                    isSaved: true
+                    userUpdated: userData
                 });
             }).catch(err => {
                 dispatch({type: "ERROR_UPDATE_USER_DATA"})
@@ -47,10 +46,7 @@ class Favorites extends Component {
                 <Col xs={12}>
                     <h2>Favorites</h2>
                     <hr/>
-                    {!this.props.user.isSaved ?
-                        <button className ='saveList' onClick={this.handleSaveList}>Save list</button>
-                        : null
-                    }
+                    <button className ='saveList' onClick={this.handleSaveList}>Save list</button>
                     <ListOfFavorites
                         favoritesList={this.props.user.favorites}
                     />

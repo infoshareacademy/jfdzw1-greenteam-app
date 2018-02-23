@@ -8,6 +8,8 @@ const initState = {
 
 const login= (state = initState, action) => {
 
+    console.log(state);
+
     const addInspirtaionToFavorites = () => {
         const {id} = action;
 
@@ -28,7 +30,7 @@ const login= (state = initState, action) => {
     const removeFavorite = () => {
         const {id} = action;
 
-        const updatedStateRemove = {...state};
+        const updatedStateRemove = {...state, isSaved: false};
         const updatedStateUserDate = {...updatedStateRemove.userData};
         const updatedStateItemsRemove = [...updatedStateUserDate.favorites];
 
@@ -45,6 +47,7 @@ const login= (state = initState, action) => {
         return updatedStateRemove;
     };
 
+
     switch (action.type) {
         case "ADD_INSPIRATION_TO_FAVORITES":
             return addInspirtaionToFavorites();
@@ -59,9 +62,9 @@ const login= (state = initState, action) => {
         case "PENDING_UPDATE_USER_DATA":
             return {...state, pending: true};
         case "ERROR_UPDATE_USER_DATA":
-            return {...state, hasError: true, pending: false, isSaved:false};
+            return {...state, hasError: true, pending:false, isSaved:false};
         case "SUCCESS_UPDATE_USER_DATA":
-            return {...state, pending: false, isSaved:action.isSaved, userData:action.userUpdated};
+            return {...state, pending: false, isSaved:true, userData:action.userUpdated};
         default:
             return state;
     }
