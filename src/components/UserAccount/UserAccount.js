@@ -6,9 +6,9 @@ const UserAccount = (props) => {
     return (
         <Row>
             <Col xs={8} xsOffset={2}>
-                <p>Login:</p>
-                <p>Email:</p>
-                <p>Gender:</p>
+                <p>Login: <b>{props.login}</b></p>
+                <p>Email: <b>{props.email}</b></p>
+                <p>Gender: <b>{props.gender}</b></p>
             </Col>
         </Row>
     )

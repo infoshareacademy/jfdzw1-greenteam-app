@@ -15,7 +15,11 @@ class Account extends Component {
                 <Col xs={12}>
                     <h2>Account</h2>
                     <hr/>
-                    <UserAccount/>
+                    <UserAccount
+                        login = {this.props.user.login}
+                        email = {this.props.user.email}
+                        gender = {this.props.user.gender}
+                    />
 
                 </Col>
             </Row>
