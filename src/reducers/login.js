@@ -49,7 +49,7 @@ const login = (state = initState, action) => {
     const updateUserData = () => {
         const {userDataUpdated} = action;
 
-        const updatedState = {...state, pending:false, isSaved: true};
+        const updatedState = {...state, pending:false, isSaved: true, editMode: false};
         const updatedStateUserDate = {...updatedState.userData};
 
         const dataToUpdate = {...updatedStateUserDate, userDataUpdated};

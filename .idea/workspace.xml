@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51bdcf55-464c-4ff2-9f60-dd671423d37f" name="Default" comment="account | uppdate danych, wersja robocza">
+    <list default="true" id="51bdcf55-464c-4ff2-9f60-dd671423d37f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/UserAccount/EditUserAccountData.js" afterPath="$PROJECT_DIR$/src/components/UserAccount/EditUserAccountData.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/UserAccount/UserAccount.js" afterPath="$PROJECT_DIR$/src/components/UserAccount/UserAccount.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/login.js" afterPath="$PROJECT_DIR$/src/reducers/login.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,13 +14,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/reducers/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+            <state relative-caret-position="243">
+              <caret line="51" column="85" lean-forward="false" selection-start-line="51" selection-start-column="85" selection-end-line="51" selection-end-column="85" />
               <folding>
-                <marker date="1519393031578" expanded="true" signature="18:84" ph="{...}" />
+                <marker date="1519393411509" expanded="true" signature="18:84" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -66,9 +64,11 @@
       <file leaf-file-name="Register.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="362">
+              <caret line="45" column="16" lean-forward="true" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditUserAccountData.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EditUserAccountData.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/UserAccount/EditUserAccountData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+            <state relative-caret-position="396">
+              <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -164,9 +164,9 @@
         <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/scenes/Favorites.js" />
         <option value="$PROJECT_DIR$/src/scenes/Account.js" />
-        <option value="$PROJECT_DIR$/src/reducers/login.js" />
         <option value="$PROJECT_DIR$/src/components/UserAccount/UserAccount.js" />
         <option value="$PROJECT_DIR$/src/components/UserAccount/EditUserAccountData.js" />
+        <option value="$PROJECT_DIR$/src/reducers/login.js" />
       </list>
     </option>
   </component>
@@ -312,7 +312,7 @@
       <workItem from="1519065606419" duration="6046000" />
       <workItem from="1519153715480" duration="25012000" />
       <workItem from="1519347356970" duration="762000" />
-      <workItem from="1519375859581" duration="15377000" />
+      <workItem from="1519375859581" duration="15517000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'przejscie_na_zewnetrzny_serwis' into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1517160446573</created>
@@ -531,11 +531,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519392775357</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="account | uppdate danych, zmiana danych działa">
+      <created>1519393315432</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1519393315432</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97273000" />
+    <option name="totallyTimeSpent" value="97413000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -593,7 +600,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Inspirations | przycisk add to favorites dodany na item" />
     <MESSAGE value="Inspirations | poprawiony reducer i dodane css" />
     <MESSAGE value="Inspirations | ukrywanie przycisku inspirations w header jeśli użytkownik nie jest zalogowany" />
     <MESSAGE value="Inspirations | ukrywanie przycisku inspirations w footer jeśli użytkownik nie jest zalogowany" />
@@ -618,7 +624,8 @@
     <MESSAGE value="account | przechodzenie w tryb edycji danych użytkownika" />
     <MESSAGE value="account | usuwanie konta użytkownika gotowe" />
     <MESSAGE value="account | uppdate danych, wersja robocza" />
-    <option name="LAST_COMMIT_MESSAGE" value="account | uppdate danych, wersja robocza" />
+    <MESSAGE value="account | uppdate danych, zmiana danych działa" />
+    <option name="LAST_COMMIT_MESSAGE" value="account | uppdate danych, zmiana danych działa" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -990,14 +997,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scenes/Account.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1024,16 +1023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-          <folding>
-            <marker date="1519393031578" expanded="true" signature="18:84" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UserAccount/UserAccount.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1044,12 +1033,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UserAccount/EditUserAccountData.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+        <state relative-caret-position="362">
+          <caret line="45" column="16" lean-forward="true" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="49" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UserAccount/EditUserAccountData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="51" column="85" lean-forward="false" selection-start-line="51" selection-start-column="85" selection-end-line="51" selection-end-column="85" />
+          <folding>
+            <marker date="1519393411509" expanded="true" signature="18:84" ph="{...}" />
           </folding>
         </state>
       </provider>
