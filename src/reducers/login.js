@@ -9,8 +9,6 @@ const initState = {
 
 const login = (state = initState, action) => {
 
-    console.log(state);
-
     const addInspirtaionToFavorites = () => {
         const {id} = action;
 

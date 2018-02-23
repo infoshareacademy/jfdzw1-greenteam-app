@@ -6,16 +6,18 @@ class EditUserAccountData extends Component {
 
     handleChangeData = (event) => {
         event.preventDefault();
-        this.props.changeData(this.changeData);
+        this.props.changeData(this.changeData, this.props.user.login);
     };
 
-    changeData = ()=> {
+    changeData = (login)=> {
         const userData = {
-            login: this.props.user.login,
+            login: login,
             email: this.email.value,
             gender: this.gender,
             password: this.password.value
         };
+
+        console.log(userData)
 
         return (dispatch) => {
             dispatch({type: "PENDING_UPDATE_USER_DATA"});
@@ -84,13 +86,13 @@ class EditUserAccountData extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.login
+        user: state.login.userData
     }
 };
 
 const mapStateDispatchToProps = (dispatch) => {
     return {
-        changeData:(reg) => dispatch (reg())
+        changeData:(reg, login) => dispatch (reg(login))
     }
 };
 
