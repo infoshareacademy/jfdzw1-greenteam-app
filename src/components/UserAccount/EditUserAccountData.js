@@ -6,21 +6,21 @@ const EditUserAccountData = (props) => {
     return (
         <Row>
             <Col xs={12}>
+                <p>Login: <b>{props.login}</b></p>
                 <Form horizontal>
-                    <FormGroup controlId="formBasicText">
-                        <Col componentClass={ControlLabel} sm={2}>
-                            Login
+                    <FormGroup controlId="formHorizontalPassword">
+                        <Col componentClass={ControlLabel} sm={3}>
+                            Password
                         </Col>
                         <Col sm={8}>
-                            <FormControl type="text" placeholder={props.login} required="true"
+                            <FormControl type="password"  required="true"
                                          inputRef={ref => {
-                                             this.login = ref;
+                                             this.password = ref;
                                          }}/>
                         </Col>
                     </FormGroup>
-
                     <FormGroup controlId="formHorizontalEmail">
-                        <Col componentClass={ControlLabel} sm={2}>
+                        <Col componentClass={ControlLabel} sm={3}>
                             Email
                         </Col>
                         <Col sm={8}>
@@ -37,6 +37,9 @@ const EditUserAccountData = (props) => {
                             <Radio onClick={()=>this.gender="man"} name="gender">Male</Radio>
                         </Col>
                     </FormGroup>
+                    <Col>
+                        <button className="saveBtn">Save your changes</button>
+                    </Col>
                 </Form>
             </Col>
         </Row>

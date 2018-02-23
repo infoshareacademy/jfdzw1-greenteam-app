@@ -85,6 +85,12 @@ const login= (state = initState, action) => {
             return {...state, editMode:true};
         case "DISCARD_EDIT_MODE":
             return {...state, editMode:false};
+        case "PENDING_REMOVE_USER":
+            return {...state, pending: true};
+        case "ERROR_REMOVE_USER":
+            return {...state, hasError: true, pending:false, isSaved:false};
+        case "SUCCESS_REMOVE_USER":
+            return {...state, hasError: false, pending: false};
 
         default:
             return state;

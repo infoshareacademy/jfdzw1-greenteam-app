@@ -14,7 +14,36 @@ class Account extends Component {
 
     handleClickDiscardEditMode = () => {
         this.props.discardEditMode();
-    }
+    };
+
+    handleClickRemoveAccount = () => {
+        this.props.removeAccount(this.removeAccount);
+    };
+
+    removeAccount = () => {
+        const accountToRemove = {
+            login: this.props.user.userData.login,
+        };
+
+        return (dispatch) => {
+            dispatch({type: "PENDING_REMOVE_USER"});
+
+            fetch(`http://api.isa-jfdzw1.vipserv.org/greenteam/user`, {
+                method: 'DELETE',
+                body: JSON.stringify(accountToRemove),
+                headers: new Headers({
+                    'Content-Type': 'application/json'
+                })
+            }).then(rsp => rsp.json()).then(data => {
+                dispatch({
+                    type: "SUCCESS_REMOVE_USER",
+                });
+                this.props.history.push('/login')
+            }).catch(err => {
+                dispatch({type: "ERROR_REMOVE_USER"})
+            });
+        };
+    };
 
     render() {
 
@@ -32,7 +61,7 @@ class Account extends Component {
                                     email={this.props.user.userData.email}
                                     gender={this.props.user.userData.gender}
                                 />
-                                <Button bsStyle="link" className="removeBtn">Remove account</Button>
+                                <Button bsStyle="link" className="removeBtn" onClick={this.handleClickRemoveAccount}>Remove account</Button>
                             </Col>
                             <Col xs={2}>
                                 <button className="saveBtn" onClick={this.handleClickEditMode}>Change your data</button>
@@ -47,9 +76,6 @@ class Account extends Component {
                                     gender={this.props.user.userData.gender}
                                 />
                                 <Button bsStyle="link" className="removeBtn" onClick={this.handleClickDiscardEditMode}>Discard changes</Button>
-                            </Col>
-                            <Col xs={2}>
-                                <button className="saveBtn">Save your changes</button>
                             </Col>
                         </Row>
                     }
@@ -72,7 +98,8 @@ const mapStateDispatchToProps = (dispatch) => {
         }),
         discardEditMode: () => dispatch({
             type: "DISCARD_EDIT_MODE",
-        })
+        }),
+        removeAccount: (reg) => dispatch (reg())
     }
 };
 
