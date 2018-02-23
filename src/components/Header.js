@@ -6,55 +6,69 @@ import {connect} from 'react-redux';
 
 class Header extends Component {
 
-render () {
+    handleLogOut = () => {
+        this.props.logOut();
+    };
 
-    return (
-        <Navbar collapseOnSelect>
-            <Navbar.Header>
-                <Navbar.Brand>Outfits by weather</Navbar.Brand>
-                <Navbar.Toggle/>
-            </Navbar.Header>
+    render () {
+        return (
+            <Navbar collapseOnSelect>
+                <Navbar.Header>
+                    <Navbar.Brand>Outfits by weather</Navbar.Brand>
+                    <Navbar.Toggle/>
+                </Navbar.Header>
 
-            <Navbar.Collapse>
-                <Nav>
-                    {!this.props.user.isLoged ?
-                        <LinkContainer exact to={"/login"}>
-                            <NavItem>Log in</NavItem>
-                        </LinkContainer>
-                        :
-                        null
-                    }
+                <Navbar.Collapse>
+                    <Nav>
+                        {!this.props.user.isLoged ?
+                            <LinkContainer exact to={"/login"}>
+                                <NavItem>Log in</NavItem>
+                            </LinkContainer>
+                            :
+                            null
+                        }
 
-                    {this.props.user.isLoged ?
-                        <LinkContainer to={"/inspiration"}>
-                            <NavItem>
-                                Inspirations
-                            </NavItem>
-                        </LinkContainer>
-                        :
-                        null
-                    }
+                        {this.props.user.isLoged ?
+                            <LinkContainer to={"/inspiration"}>
+                                <NavItem>
+                                    Inspirations
+                                </NavItem>
+                            </LinkContainer>
+                            :
+                            null
+                        }
 
-                    {this.props.user.isLoged ?
-                        <LinkContainer to={"/favorites"}>
-                            <NavItem>Favorites
-                                {!this.props.user.isSaved ?
-                                    <Label>Save your's favorites</Label>
-                                    :
-                                    null
-                                }
-                            </NavItem>
+                        {this.props.user.isLoged ?
+                            <LinkContainer to={"/favorites"}>
+                                <NavItem>Favorites
+                                    {!this.props.user.isSaved ?
+                                        <Label>Save your's favorites</Label>
+                                        :
+                                        null
+                                    }
+                                </NavItem>
 
-                        </LinkContainer>
-                        :
-                        null
-                    }
+                            </LinkContainer>
+                            :
+                            null
+                        }
 
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
-    )
-}};
+                    </Nav>
+                    <Nav pullRight>
+                        {this.props.user.isLoged ?
+                            <LinkContainer to={"/login"}>
+                                <NavItem onClick={this.handleLogOut}>
+                                    Log out
+                                </NavItem>
+                            </LinkContainer>
+                            :
+                            null
+                        }
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
+        )
+    }};
 
 
 const mapStateToProps = (state) => {
@@ -63,6 +77,14 @@ const mapStateToProps = (state) => {
     }
 };
 
-const connectedItems = connect(mapStateToProps)(Header);
+const mapStateDispatchToProps = (dispatch) => {
+    return {
+        logOut: () => dispatch({
+            type: "LOG_OUT"
+        })
+    }
+};
+
+const connectedItems = connect(mapStateToProps,mapStateDispatchToProps)(Header);
 
 export {connectedItems as Header};

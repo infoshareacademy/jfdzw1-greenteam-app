@@ -78,6 +78,8 @@ const login= (state = initState, action) => {
             return {...state, hasError: true, pending:false, isSaved:false};
         case "SUCCESS_UPDATE_USER_DATA":
             return updateUserData();
+        case "LOG_OUT":
+            return {...state, isLoged:false};
         default:
             return state;
     }
