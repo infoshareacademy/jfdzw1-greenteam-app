@@ -14,6 +14,7 @@ import {Register} from './components/Register';
 import {Login} from './components/Login';
 import {Inspirations} from './scenes/Inspirations';
 import {Favorites} from './scenes/Favorites';
+import {Account} from './scenes/Account';
 
 
 const store = createStore(
@@ -37,6 +38,7 @@ class App extends React.Component {
                             <Route exact path="/login" component={Login}/>
                             <Route path={"/inspiration"} component={Inspirations}/>
                             <Route path={"/favorites"} component={Favorites}/>
+                            <Route path={"/account"} component={Account}/>
                         </Switch>
                         <Footer/>
                     </Grid>

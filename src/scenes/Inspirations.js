@@ -15,7 +15,10 @@ class Inspirations extends Component {
         const seasons = ['winter', 'spring', 'summer', 'autumn'];
         const getRandomSeason = Math.floor (Math.random () * seasons.length);
 
-        const inspirations = (userGender === 'female') ? "fashion" : "inspirations";
+        const femaleInspirations = ['outfits', 'fashion', 'trends'];
+        const getRandomfemaleInspirations = Math.floor (Math.random () * femaleInspirations.length);
+
+        const inspirations = (userGender === 'female') ? `${femaleInspirations[getRandomfemaleInspirations]}` : "inspirations";
 
         return (dispatch) => {
             dispatch({type: "PENDING_GET_ITEMS"});
@@ -65,12 +68,12 @@ const mapStateToProps = (state) => {
     }
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapStateDispatchToProps = (dispatch) => {
     return {
         getItemsFromApi: (getData,userGender) => dispatch(getData(userGender))
     }
 };
 
-const connectedItems = connect(mapStateToProps, mapDispatchToProps)(Inspirations);
+const connectedItems = connect(mapStateToProps, mapStateDispatchToProps)(Inspirations);
 
 export {connectedItems as Inspirations};

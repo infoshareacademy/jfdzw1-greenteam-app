@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+    font-size: 16px;
 }
 
 .colthItem {
@@ -17,6 +18,12 @@ body {
   margin: auto;
   margin-bottom: 10px;
 }
+
+.thumbnail > img, .thumbnail a > img {
+    width: 230px;
+    height: 360px;
+}
+
 
 .addToFavorites {
   width: 230px;

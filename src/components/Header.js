@@ -56,6 +56,16 @@ class Header extends Component {
                     </Nav>
                     <Nav pullRight>
                         {this.props.user.isLoged ?
+                            <LinkContainer to={'/account'}>
+                                <NavItem >
+                                    Account
+                                </NavItem>
+                            </LinkContainer>
+                            :
+                            null
+                        }
+
+                        {this.props.user.isLoged ?
                             <LinkContainer to={"/login"}>
                                 <NavItem onClick={this.handleLogOut}>
                                     Log out
