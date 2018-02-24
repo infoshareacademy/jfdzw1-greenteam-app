@@ -22,8 +22,7 @@ const ClothItem = (props) => {
 
         {item.favorite ?
           <button className='addedToFavorites'>Added to favorites</button>
-          : <button className='addToFavorites' onClick={handleClickItemAddedToFavorites}>Add to
-            favorites</button>}
+          : <div className='heart' onClick={handleClickItemAddedToFavorites}>Add</div>}
 
       </div>
     </Col>
