@@ -1,85 +1,63 @@
-import React, {Component} from "react";
-import { Navbar, Nav,NavItem, Label} from "react-bootstrap";
-import {LinkContainer} from "react-router-bootstrap"
-
-import {connect} from 'react-redux';
+import React, { Component } from "react";
+import { Navbar, Nav, NavItem, Label } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+import { connect } from 'react-redux';
+import * as actions from '../reducers/actions/actions';
 
 class Header extends Component {
 
     handleLogOut = () => {
         this.props.logOut();
-    };
+    }
 
-    render () {
+    render() {
         return (
             <Navbar collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>Outfits by weather</Navbar.Brand>
-                    <Navbar.Toggle/>
+                    <Navbar.Toggle />
                 </Navbar.Header>
 
                 <Navbar.Collapse>
                     <Nav>
-                        {!this.props.user.isLoged ?
-                            <LinkContainer exact to={"/login"}>
+                        {!this.props.user.isLoged
+                            ? <LinkContainer exact to='/login'>
                                 <NavItem>Log in</NavItem>
                             </LinkContainer>
-                            :
-                            null
-                        }
-
-                        {this.props.user.isLoged ?
-                            <LinkContainer to={"/inspiration"}>
-                                <NavItem>
-                                    Inspirations
-                                </NavItem>
+                            : null}
+                        {this.props.user.isLoged
+                            ? <LinkContainer to='/inspiration'>
+                                <NavItem>Inspirations</NavItem>
                             </LinkContainer>
-                            :
-                            null
-                        }
-
-                        {this.props.user.isLoged ?
-                            <LinkContainer to={"/favorites"}>
+                            : null}
+                        {this.props.user.isLoged
+                            ? <LinkContainer to='/favorites'>
                                 <NavItem>Favorites
-                                    {!this.props.user.isSaved ?
-                                        <Label>Save your's favorites</Label>
-                                        :
-                                        null
+                                    {!this.props.user.isSaved
+                                        ? <Label>Save your's favorites</Label>
+                                        : null
                                     }
                                 </NavItem>
-
                             </LinkContainer>
-                            :
-                            null
-                        }
-
+                            : null}
                     </Nav>
                     <Nav pullRight>
-                        {this.props.user.isLoged ?
-                            <LinkContainer to={'/account'}>
-                                <NavItem >
-                                    Account
-                                </NavItem>
+                        {this.props.user.isLoged
+                            ? <LinkContainer to='/account'>
+                                <NavItem>Account</NavItem>
                             </LinkContainer>
-                            :
-                            null
-                        }
-
-                        {this.props.user.isLoged ?
-                            <LinkContainer to={"/login"}>
-                                <NavItem onClick={this.handleLogOut}>
-                                    Log out
-                                </NavItem>
+                            : null}
+                        {this.props.user.isLoged
+                            ? <LinkContainer to='/login'>
+                                <NavItem onClick={this.handleLogOut}>Log out</NavItem>
                             </LinkContainer>
-                            :
-                            null
-                        }
+                            : null}
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-        )
-    }};
-
+        );
+    }
+}
 
 const mapStateToProps = (state) => {
     return {
@@ -89,12 +67,10 @@ const mapStateToProps = (state) => {
 
 const mapStateDispatchToProps = (dispatch) => {
     return {
-        logOut: () => dispatch({
-            type: "LOG_OUT"
-        })
+        logOut: () => dispatch({ type: actions.LOG_OUT })
     }
 };
 
-const connectedItems = connect(mapStateToProps,mapStateDispatchToProps)(Header);
+const connectedItems = connect(mapStateToProps, mapStateDispatchToProps)(Header);
 
-export {connectedItems as Header};
+export { connectedItems as Header };
