@@ -17,11 +17,11 @@ class Account extends Component {
 
     handleClickEditMode = () => {
         this.setState({ editMode: true });
-    }
+    };
 
     handleClickDiscardEditMode = () => {
         this.setState({ editMode: false });
-    }
+    };
 
     handleClickRemoveAccount = () => {
         this.props.removeAccount(this.removeAccount);

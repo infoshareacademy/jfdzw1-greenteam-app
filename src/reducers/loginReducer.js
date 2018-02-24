@@ -1,4 +1,7 @@
 import * as actions from './actions/actions';
+import {addInspirtaionToFavorites} from './actions/addInspirtaionToFavorites';
+import {removeFavorite} from './actions/removeFavorite';
+import {updateUserData} from './actions/updateUserData';
 
 const initState = {
     pending: false,
@@ -7,56 +10,6 @@ const initState = {
     isSaved: true,
     userData: {}
 };
-
-const addInspirtaionToFavorites = (action, state) => {
-    const { id } = action;
-
-    const newFavorite = {
-        img: id
-    };
-
-    const updatedState = { ...state, isSaved: false };
-    const updatedStateUserDate = { ...updatedState.userData };
-    const newItem = [...updatedStateUserDate.favorites, newFavorite];
-    updatedStateUserDate.favorites = newItem;
-    updatedState.userData = updatedStateUserDate;
-
-    return updatedState
-};
-
-const removeFavorite = (action, state) => {
-    const { id } = action;
-
-    const updatedStateRemove = { ...state, isSaved: false };
-    const updatedStateUserDate = { ...updatedStateRemove.userData };
-    const updatedStateItemsRemove = [...updatedStateUserDate.favorites];
-
-    const itemToRemoveIndex = updatedStateItemsRemove.findIndex(item => item.img === id);
-
-    const itemToRemove = [
-        ...updatedStateItemsRemove.slice(0, itemToRemoveIndex),
-        ...updatedStateItemsRemove.slice(itemToRemoveIndex + 1)
-    ];
-
-    updatedStateUserDate.favorites = itemToRemove;
-    updatedStateRemove.userData = updatedStateUserDate;
-
-    return updatedStateRemove;
-};
-
-const updateUserData = (action, state) => {
-    const { userDataUpdated } = action;
-
-    const updatedState = { ...state, pending: false, isSaved: true };
-    const updatedStateUserDate = { ...updatedState.userData };
-
-    const dataToUpdate = { ...updatedStateUserDate, userDataUpdated };
-
-    updatedState.userData = dataToUpdate;
-
-    return updatedState;
-};
-
 
 const loginReducer = (state = initState, action) => {
     switch (action.type) {
