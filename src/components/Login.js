@@ -18,7 +18,7 @@ class Login extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.register(this.register);
-    }
+    };
 
     register = () => {
         const dataLogin = {
@@ -45,7 +45,7 @@ class Login extends Component {
                 dispatch({ type: actions.ERROR_LOGIN });
             });
         };
-    }
+    };
 
     render() {
         return (
