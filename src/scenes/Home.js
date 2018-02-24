@@ -1,15 +1,13 @@
 import React from 'react';
-import {Row, Col } from "react-bootstrap";
-
-
+import {Col, Row} from "react-bootstrap";
 
 const Home = () => (
-    <Row className="show-grid">
-        <Col xs={12}>
-            <h2>Home</h2>
+  <Row className="show-grid">
+    <Col xs={12}>
+      <h2>Home</h2>
 
-        </Col>
-    </Row>
+    </Col>
+  </Row>
 );
 
 export default Home;
