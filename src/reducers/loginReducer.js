@@ -15,7 +15,7 @@ const loginReducer = (state = initState, action) => {
     switch (action.type) {
         case actions.ADD_INSPIRATION_TO_FAVORITES:
             return addInspirtaionToFavorites(action, state);
-        case 'REMOVE_FAVORITE':
+        case actions.REMOVE_FAVORITE:
             return removeFavorite(action, state);
         case actions.PENDING_LOGIN:
             return { ...state, pending: true };

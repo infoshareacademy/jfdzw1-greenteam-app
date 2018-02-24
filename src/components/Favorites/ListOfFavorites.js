@@ -5,16 +5,16 @@ import {Favorite} from './Favorite';
 
 const ListOfFovorites = (props) => {
 
-    return (
-        <Row>
-            {props.favoritesList.map((item,id) =>
-                <Favorite
-                    key= {id}
-                    img= {item.img}
-                />
-            )}
-        </Row>
-    )
+  return (
+    <Row>
+      {props.favoritesList.map((item, id) =>
+        <Favorite
+          key={id}
+          img={item.img}
+        />
+      )}
+    </Row>
+  )
 };
 
 export default ListOfFovorites;
