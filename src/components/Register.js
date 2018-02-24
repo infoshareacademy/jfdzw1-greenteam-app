@@ -1,7 +1,9 @@
-import React, {Component} from 'react';
-import {Form, FormGroup, ControlLabel, Col, FormControl,Radio, Button} from 'react-bootstrap'
-import {connect} from 'react-redux';
-import { withRouter } from 'react-router'
+import React, { Component } from 'react';
+import { Form, FormGroup, ControlLabel, Col, FormControl, Radio, Button } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+import * as actions from '../reducers/actions/actions';
+import * as appConsts from '../consts';
 
 class Register extends Component {
     constructor(props) {
@@ -11,7 +13,7 @@ class Register extends Component {
             login: '',
             password: '',
             gender: ''
-        }
+        };
     }
 
     handleSubmit = (event) => {
@@ -19,101 +21,87 @@ class Register extends Component {
         this.props.register(this.register);
     }
 
-    register = ()=> {
-
+    register = () => {
         const dataRegister = {
             email: this.email.value,
             login: this.login.value,
             gender: this.gender,
             password: this.password.value
-        }
-
+        };
 
         return (dispatch) => {
-            dispatch({type: "PENDING"});
+            dispatch({ type: actions.PENDING });
 
-            fetch(`http://api.isa-jfdzw1.vipserv.org/greenteam/user`, {
+            fetch(`${appConsts.API_URL}/user`, {
                 method: 'POST',
                 body: JSON.stringify(dataRegister),
                 headers: new Headers({
                     'Content-Type': 'application/json'
                 })
             }).then(rsp => rsp.json()).then(data => {
-                dispatch({
-                    type: "SUCCESS",
-                    usersCreate: dataRegister
-                });
-                this.props.history.push('/login')
+                dispatch({ type: actions.SUCCESS, usersCreate: dataRegister });
+                this.props.history.push('/login');
             }).catch(err => {
-                dispatch({type: "ERROR"})
+                dispatch({ type: actions.ERROR });
             });
         };
     }
 
-    render(){console.log(this.props)
+    render() {
         return (
             <div>
                 <h2>Sign Up</h2>
                 <Form horizontal onSubmit={this.handleSubmit}>
-
-                    <FormGroup controlId="formHorizontalEmail">
+                    <FormGroup controlId='formHorizontalEmail'>
                         <Col componentClass={ControlLabel} sm={2}>
                             Email
                         </Col>
                         <Col sm={4}>
-                            <FormControl type="email" placeholder="Email" required="true"
-                                         inputRef={ref => {
-                                             this.email = ref;
-                                         }}/>
+                            <FormControl type='email' placeholder='Email' required='true'
+                                inputRef={ref => this.email = ref} />
                         </Col>
                     </FormGroup>
-                    <FormGroup controlId="formBasicText">
+                    <FormGroup controlId='formBasicText'>
                         <Col componentClass={ControlLabel} sm={2}>
                             Login
                         </Col>
                         <Col sm={4}>
-                            <FormControl type="text" placeholder="Name" required="true"
-                                         inputRef={ref => {
-                                             this.login = ref;
-                                         }}/>
+                            <FormControl type='text' placeholder='Name' required='true'
+                                inputRef={ref => this.login = ref} />
                         </Col>
                     </FormGroup>
-                    <FormGroup controlId="formHorizontalPassword">
+                    <FormGroup controlId='formHorizontalPassword'>
                         <Col componentClass={ControlLabel} sm={2}>
                             Password
                         </Col>
                         <Col sm={4}>
-                            <FormControl type="password" placeholder="Password" required="true"
-                                         inputRef={ref => {
-                                             this.password = ref;
-                                         }}/>
-                        </Col>
-                    </FormGroup>
-
-                    <FormGroup>
-                        <Col smOffset={2} sm={10}>
-                            <Radio onClick={()=>this.gender="female"} name="gender">Female </Radio>
-                            <Radio onClick={()=>this.gender="man"} name="gender">Male</Radio>
+                            <FormControl type='password' placeholder='Password' required='true'
+                                inputRef={ref => this.password = ref} />
                         </Col>
                     </FormGroup>
                     <FormGroup>
                         <Col smOffset={2} sm={10}>
-                            <Button type="submit" value="send">Sign in</Button>
+                            <Radio onClick={() => this.gender = 'female'} name='gender'>Female </Radio>
+                            <Radio onClick={() => this.gender = 'man'} name='gender'>Male</Radio>
+                        </Col>
+                    </FormGroup>
+                    <FormGroup>
+                        <Col smOffset={2} sm={10}>
+                            <Button type='submit'>Sign in</Button>
                         </Col>
                     </FormGroup>
                 </Form>
             </div>
         );
     }
-
 }
 
 const mapStateDispatchToProps = (dispatch) => {
     return {
-        register:(reg) => dispatch (reg())
+        register: (reg) => dispatch(reg())
     }
-}
+};
 
-const connectedRegister = connect (null, mapStateDispatchToProps)(withRouter(Register));
+const connectedRegister = connect(null, mapStateDispatchToProps)(withRouter(Register));
 
-export {connectedRegister as Register}
+export { connectedRegister as Register }

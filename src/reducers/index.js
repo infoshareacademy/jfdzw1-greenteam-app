@@ -1,11 +1,12 @@
-import {combineReducers} from "redux";
+import { combineReducers } from "redux";
 
-import {register} from "./register";
-import {clothesItemsReducer} from "./inspirationsReducer"
-import {login} from "./login";
+import registerReducer from "./register";
+import clothesItemsReducer from "./inspirationsReducer"
+import loginReducer from "./login";
+
 export default combineReducers({
     clothesItems: clothesItemsReducer,
-    register: register,
-    login: login,
+    register: registerReducer,
+    login: loginReducer,
 });
 

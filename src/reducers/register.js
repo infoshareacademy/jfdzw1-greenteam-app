@@ -1,3 +1,4 @@
+import * as actions from './actions/actions';
 
 const initState = {
     pending: false,
@@ -5,17 +6,17 @@ const initState = {
     userData: {}
 };
 
-const register= (state = initState, action) => {
+const registerReducer = (state = initState, action) => {
     switch (action.type) {
-        case "PENDING":
-            return {...state, pending: true};
-        case "ERROR":
-            return {...state, hasError: true, pending: false};
-        case "SUCCESS":
-            return {...state, pending: false, userData: action.usersCreate};
+        case actions.PENDING:
+            return { ...state, pending: true };
+        case actions.ERROR:
+            return { ...state, hasError: true, pending: false };
+        case actions.SUCCESS:
+            return { ...state, pending: false, userData: action.usersCreate };
         default:
             return state;
     }
 };
 
-export {register};
+export default registerReducer;

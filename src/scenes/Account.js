@@ -1,89 +1,102 @@
-import React, {Component} from 'react';
-import {Row, Col, Button} from 'react-bootstrap';
-import {connect} from 'react-redux';
-
+import React, { Component } from 'react';
+import { Row, Col, Button } from 'react-bootstrap';
+import { connect } from 'react-redux';
 import UserAccount from '../components/UserAccount/UserAccount';
-import {EditUserAccountData} from '../components/UserAccount/EditUserAccountData'
-
+import { EditUserAccountData } from '../components/UserAccount/EditUserAccountData';
+import * as actions from '../reducers/actions/actions';
+import * as appConsts from '../consts';
 
 class Account extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            editMode: false
+        };
+    }
+
     handleClickEditMode = () => {
-        this.props.editMode();
-    };
+        this.setState({ editMode: true });
+    }
 
     handleClickDiscardEditMode = () => {
-        this.props.discardEditMode();
-    };
+        this.setState({ editMode: false });
+    }
 
     handleClickRemoveAccount = () => {
         this.props.removeAccount(this.removeAccount);
-    };
+    }
 
     removeAccount = () => {
         const accountToRemove = {
-            login: this.props.user.userData.login,
+            login: this.props.user.userData.login
         };
 
         return (dispatch) => {
-            dispatch({type: "PENDING_REMOVE_USER"});
+            dispatch({ type: actions.PENDING_REMOVE_USER });
 
-            fetch(`http://api.isa-jfdzw1.vipserv.org/greenteam/user`, {
+            fetch(`${appConsts.API_URL}/user`, {
                 method: 'DELETE',
                 body: JSON.stringify(accountToRemove),
                 headers: new Headers({
                     'Content-Type': 'application/json'
                 })
             }).then(rsp => rsp.json()).then(data => {
-                dispatch({
-                    type: "SUCCESS_REMOVE_USER",
-                });
-                this.props.history.push('/login')
+                dispatch({ type: actions.SUCCESS_REMOVE_USER });
+                this.props.history.push('/login');
             }).catch(err => {
-                dispatch({type: "ERROR_REMOVE_USER"})
+                dispatch({ type: actions.ERROR_REMOVE_USER });
             });
         };
-    };
+    }
 
     handleSaveUserChanges = (event) => {
         event.preventDefault();
         this.props.saveList(this.saveList);
-    };
+    }
+
+    renderEditMode = () => {
+        return (
+            <Row>
+                <Col xs={4} xsOffset={2}>
+                    <EditUserAccountData
+                        login={this.props.user.userData.login}
+                        email={this.props.user.userData.email}
+                        gender={this.props.user.userData.gender}
+                    />
+                    <Button bsStyle='link' className='removeBtn' onClick={this.handleClickDiscardEditMode}>Discard changes</Button>
+                </Col>
+            </Row>
+        );
+    }
+
+    renderDisplayMode = () => {
+        return (
+            <Row>
+                <Col xs={4} xsOffset={2}>
+                    <UserAccount
+                        login={this.props.user.userData.login}
+                        email={this.props.user.userData.email}
+                        gender={this.props.user.userData.gender}
+                    />
+                    <Button bsStyle='link' className='removeBtn' onClick={this.handleClickRemoveAccount}>Remove account</Button>
+                </Col>
+                <Col xs={2}>
+                    <button className='saveBtn' onClick={this.handleClickEditMode}>Change your data</button>
+                </Col>
+            </Row>
+        );
+    }
 
     render() {
-
         return (
-
-            <Row className="show-grid">
+            <Row className='show-grid'>
                 <Col xs={12}>
                     <h2>Account</h2>
-                    <hr/>
-                    {!this.props.user.editMode ?
-                        <Row>
-                            <Col xs={4} xsOffset={2}>
-                                <UserAccount
-                                    login={this.props.user.userData.login}
-                                    email={this.props.user.userData.email}
-                                    gender={this.props.user.userData.gender}
-                                />
-                                <Button bsStyle="link" className="removeBtn" onClick={this.handleClickRemoveAccount}>Remove account</Button>
-                            </Col>
-                            <Col xs={2}>
-                                <button className="saveBtn" onClick={this.handleClickEditMode}>Change your data</button>
-                            </Col>
-                        </Row>
-                        :
-                        <Row>
-                            <Col xs={4} xsOffset={2}>
-                                <EditUserAccountData
-                                    login={this.props.user.userData.login}
-                                    email={this.props.user.userData.email}
-                                    gender={this.props.user.userData.gender}
-                                />
-                                <Button bsStyle="link" className="removeBtn" onClick={this.handleClickDiscardEditMode}>Discard changes</Button>
-                            </Col>
-                        </Row>
-                    }
+                    <hr />
+                    {this.state.editMode
+                        ? this.renderEditMode()
+                        : this.renderDisplayMode()}
                 </Col>
             </Row>
         )
@@ -98,16 +111,10 @@ const mapStateToProps = (state) => {
 
 const mapStateDispatchToProps = (dispatch) => {
     return {
-        editMode: () => dispatch({
-            type: "EDIT_MODE",
-        }),
-        discardEditMode: () => dispatch({
-            type: "DISCARD_EDIT_MODE",
-        }),
-        removeAccount: (reg) => dispatch (reg())
-    }
+        removeAccount: (reg) => dispatch(reg())
+    };
 };
 
 const connectedItems = connect(mapStateToProps, mapStateDispatchToProps)(Account);
 
-export {connectedItems as Account};
+export { connectedItems as Account };
