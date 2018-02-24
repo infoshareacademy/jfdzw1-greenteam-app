@@ -1,3 +1,5 @@
+import * as actions from './actions/actions';
+
 const initState = {
     pending: false,
     hasError: false,
@@ -23,7 +25,7 @@ const addToFavorites = (action, state) => {
 
 const clothesItemsReducer = (state = initState, action) => {
     switch (action.type) {
-        case "ADD_TO_FAVORITES":
+        case actions.ADD_TO_FAVORITES:
             return addToFavorites(action, state);
         case "PENDING_GET_ITEMS":
             return { ...state, pending: true };

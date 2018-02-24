@@ -1,5 +1,5 @@
-import * as actions from './actions';
-import * as appConsts from '../../consts';
+import * as actions from '../actions';
+import * as appConsts from '../../../consts';
 
 const getRandomSeason = () => {
   const seasons = ['winter', 'spring', 'summer', 'autumn'];

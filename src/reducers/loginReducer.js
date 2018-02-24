@@ -1,7 +1,7 @@
 import * as actions from './actions/actions';
-import {addInspirtaionToFavorites} from './actions/addInspirtaionToFavorites';
-import {removeFavorite} from './actions/removeFavorite';
-import {updateUserData} from './actions/updateUserData';
+import {addInspirtaionToFavorites} from './actions/inspirations/addInspirtaionToFavorites';
+import {removeFavorite} from './actions/favorites/removeFavorite';
+import {updateUserData} from './actions/userAccount/updateUserData';
 
 const initState = {
     pending: false,
@@ -13,7 +13,7 @@ const initState = {
 
 const loginReducer = (state = initState, action) => {
     switch (action.type) {
-        case 'ADD_INSPIRATION_TO_FAVORITES':
+        case actions.ADD_INSPIRATION_TO_FAVORITES:
             return addInspirtaionToFavorites(action, state);
         case 'REMOVE_FAVORITE':
             return removeFavorite(action, state);

@@ -17,8 +17,6 @@ class EditUserAccountData extends Component {
             password: this.password.value
         };
 
-        console.log(userData)
-
         return (dispatch) => {
             dispatch({type: "PENDING_UPDATE_USER_DATA"});
 

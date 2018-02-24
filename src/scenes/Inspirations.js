@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import ListOfInspirtaions from '../components/Inspirations/ListOfInspirations';
 import * as actions from '../reducers/actions/actions';
 import * as appConsts from '../consts';
-import { getInspirations } from '../reducers/actions/inspirations';
+import { getInspirations } from '../reducers/actions/inspirations/inspirations';
 
 class Inspirations extends Component {
 

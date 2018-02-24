@@ -25,11 +25,12 @@ class Account extends Component {
 
     handleClickRemoveAccount = () => {
         this.props.removeAccount(this.removeAccount);
-    }
+    };
 
     removeAccount = () => {
         const accountToRemove = {
-            login: this.props.user.userData.login
+            login: this.props.user.userData.login,
+            password: this.props.user.userData.password
         };
 
         return (dispatch) => {
@@ -48,7 +49,7 @@ class Account extends Component {
                 dispatch({ type: actions.ERROR_REMOVE_USER });
             });
         };
-    }
+    };
 
     handleSaveUserChanges = (event) => {
         event.preventDefault();
