@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid} from 'react-bootstrap';
+import {Grid, PageHeader} from 'react-bootstrap';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import thunk from 'redux-thunk';
 
@@ -7,7 +7,7 @@ import {Provider} from 'react-redux';
 import {applyMiddleware, createStore} from 'redux';
 
 import reducer from './reducers';
-
+import logo from './logo.png'
 import {Header} from './components/Header';
 import {Footer} from './components/Footer';
 import {Register} from './components/Register';
@@ -29,7 +29,10 @@ class App extends React.Component {
       <BrowserRouter>
         <Provider store={store}>
           <Grid>
-            <h1>Hello</h1>
+            <PageHeader className='pgheader'>
+              <img src={logo} alt={"logo"}className="logo center"/>
+            </PageHeader>
+
             <Header/>
             <Switch>
               <Route path={"/register"} component={Register}/>
